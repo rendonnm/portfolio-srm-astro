@@ -13,6 +13,10 @@ import Background from "@/components/Background.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Santiago Rendón Múnera Portfolio</title>
+		<meta name="description" content="Put your description here.">
+		<meta name="description" content="Soy Santiago Rendón, desarrollador fullstack de Medellín. 
+		Construyo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework. 
+		Apasionado por el frontend, el backend y todo lo que tenga ritmo, lógica y propósito.">
 	</head>
 	<body class="relative min-h-screen w-full">
 	<Background/>
@@ -27,7 +31,8 @@ import Background from "@/components/Background.astro";
 <style>
 	@font-face {
 		font-family: "NunitoSans";
-		src: url('/NunitoSans.ttf');
+		src: url('/NunitoSans.ttf') format("truetype");
+		font-display: swap;
 	}
 	html,
 	body {

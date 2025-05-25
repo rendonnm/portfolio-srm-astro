@@ -20,7 +20,7 @@ import { navSections } from "../lib/constants/headerNavSections";
               if (socialNetwork === "CV") return;
               return (
                 <li>
-                  <a href={href} target="_blank" rel="noopener noreferrer">
+                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${socialNetwork} profile`}>
                     <Icon class="size-5 md:size-6 text-zinc-400 hover:text-zinc-200 transition-all duration-300" />
                   </a>
                 </li>
@@ -32,10 +32,10 @@ import { navSections } from "../lib/constants/headerNavSections";
       <p class="text-xs text-zinc-400">© 2025 Santiago Rendón Múnera</p>
       </div>
       <aside class="grid grid-cols-1">
-        <ul class="flex flex-col gap-3 text-sm">
-          <h5 class="font-bold">Portfolio</h5>
+          <p class="font-bold">Portfolio</p>
+          <ul class="flex flex-col gap-3 text-sm">
           {navSections.map(section=>{
-            return <li><a href={section.href} class="text-white/60 text-md font-light hover:text-white/80" rel="noopener noreferrer">{section.name}</a></li>
+            return <li><a href={section.href} class="text-white/60 text-md font-light hover:text-white/80" rel="noopener noreferrer" aria-label={`Visit ${section.name} section`}>{section.name}</a></li>
           })}
         </ul>
       </aside>
