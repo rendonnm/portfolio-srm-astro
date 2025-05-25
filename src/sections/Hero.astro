@@ -1,0 +1,22 @@
+---
+import HeroButtons from "@/components/HeroButtons.astro"
+import ReadyToWorkBadge from "@/components/ReadyToWorkBadge.astro"
+---
+
+<section class="flex mb-30" id="init">
+	<div class="flex flex-col w-[900px] justify-center gap-4">
+		<ReadyToWorkBadge/>
+		<h1 class="text-[52px] font-bold bg-linear-to-r from-cyan-100 via-blue-200 to-indigo-200 bg-clip-text text-transparent">Hola, soy Santiago</h1>
+		<section class="flex flex-col mt-2">
+		<p class="font-bold text-2xl mb-4">Ingeniero Informático desde Medellín, Colombia 🇨🇴</p>
+		<p class="font-bod text-lg text-dark-default-800">Especializado en el desarrollo de soluciones frontend que conectan con las personas y resuelven problemas reales.</p>
+		</section>
+		<footer>
+			<HeroButtons/>
+		</footer>
+	</div>
+
+	<aside class="max-w-[500px]">
+		<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="mask-b-from-60%">
+	</aside>
+</section>

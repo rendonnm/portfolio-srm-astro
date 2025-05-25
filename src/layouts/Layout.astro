@@ -1,0 +1,41 @@
+---
+import Header from "@/sections/Header.astro";
+import Footer from "@/sections/Footer.astro";
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Santiago Rendón Múnera Portfolio</title>
+	</head>
+	<body class="relative min-h-screen w-full">
+	<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+	<Header/>
+	<main class="px-4 relative section py-18 md:py-18 lg:py-14 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl">
+		<slot />
+	</main> 
+	<Footer/>
+	</body>	
+</html>
+
+<style>
+	@font-face {
+		font-family: "NunitoSans";
+		src: url('/NunitoSans.ttf');
+	}
+	html,
+	body {
+		background-color: transparent;
+		font-family: 'NunitoSans', sans-serif;
+		color: white;
+	}
+	:root{
+		background-color: black;
+		scroll-behavior: smooth;
+	}
+</style>

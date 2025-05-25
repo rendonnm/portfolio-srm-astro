@@ -1,0 +1,42 @@
+---
+import { socialNetworkLinks } from "../lib/constants/socialNetworkLinks";
+import {navSections} from '../lib/constants/headerNavSections'
+---
+
+<div
+  class="h-[1px] w-full bg-gradient-to-r from-zinc-800/25 via-zinc-800/75 to-zinc-800/25"
+>
+</div>
+<footer
+  class="max-w-[960px] px-4 bottom-0 flex justify-center py-5 md:py-20 bg-zinc-950 mx-auto "
+>
+  <section class="flex px-12 bg-zinc-950 justify-between w-full h-[150px]">
+    <div class="flex h-full flex-col justify-between">
+      <nav>
+      <ul class="flex gap-5">
+        {
+          socialNetworkLinks.map(({ socialNetwork, href, Icon }) => {
+            if (socialNetwork === "CV") return;
+            return (
+              <li>
+                <a href={href}>
+                  <Icon class="size-5 md:size-6 text-zinc-400 hover:text-zinc-200 transition-all duration-300" />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+    <p class="text-xs text-zinc-400">© 2025 Santiago Rendón Múnera</p>
+    </div>
+    <aside class="grid grid-cols-1">
+      <ul class="flex flex-col gap-3 text-sm">
+        <h5 class="font-bold">Portfolio</h5>
+        {navSections.map(section=>{
+          return <li><a href={section.href} class="text-white/60 text-md font-light hover:text-white/80">{section.name}</a></li>
+        })}
+      </ul>
+    </aside>
+  </section>
+</footer>

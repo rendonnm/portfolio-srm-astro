@@ -1,0 +1,23 @@
+---
+import { socialNetworkLinks } from "../lib/constants/socialNetworkLinks";
+---
+
+<nav class="mt-6">
+  <ul class="flex gap-5">
+    {socialNetworkLinks.map(({ socialNetwork, href, Icon }) => (
+    <li>
+      <a
+        href={href}
+        class="flex gap-3 items-center justify-center pl-3 pr-4 py-1.5 border border-zinc-600/75 
+        rounded-full h-10 hover:scale-105 transition-all duration-250 ease-in-out shadow-md
+        hover:border-zinc-500 bg-dark-primary-100/10 hover:bg-dark-primary-200/10 "
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon class="size-5 md:size-6 text-white"/>
+        {socialNetwork}
+      </a>
+    </li>
+  ))}
+  </ul>
+</nav>
