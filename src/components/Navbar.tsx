@@ -26,7 +26,7 @@ export const Navbar = () => {
   }, [])
 
   return (
-    <nav className="flex h-12 items-center justify-center px-6 rounded-full border border-zinc-600/75 bg-dark-primary-100/10 shadow-sm backdrop-blur-xs">
+    <nav className="flex h-12 items-center justify-center px-6 rounded-full border border-zinc-600/75 bg-[#030511]/40 shadow-lg backdrop-blur-sm text-sm md:text-[16px]">
       <ul className="flex gap-5 w-full">
         {navSections.map((section) => {
           const isActive = activeSection === section.id
