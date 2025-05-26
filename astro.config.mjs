@@ -6,6 +6,8 @@ import mdx from '@astrojs/mdx';
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -20,5 +22,6 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [react(), mdx()]
+  integrations: [react(), mdx()],
+  adapter: vercel()
 });

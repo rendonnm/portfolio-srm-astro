@@ -1,6 +1,6 @@
 ---
-import HeroButtons from "@/components/HeroButtons.astro"
-import ReadyToWorkBadge from "@/components/ReadyToWorkBadge.astro"
+import HeroButtons from "@/components/HeroButtons.astro";
+import ReadyToWorkBadge from "@/components/ReadyToWorkBadge.astro";
 ---
 
 <section class="flex mb-30" id="init">
@@ -18,10 +18,14 @@ import ReadyToWorkBadge from "@/components/ReadyToWorkBadge.astro"
 			<HeroButtons/>
 		</footer>
 		<div class="flex max-w-[500px] justify-center mx-auto sm:hidden">
-			<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="mask-b-from-60% drop-shadow-2xl drop-shadow-blue-50/20">
+			<div class="aspect-[3/4] w-[400px]">		
+					<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="w-full h-full mask-b-from-60% drop-shadow-2xl drop-shadow-blue-50/20">
+			</div>
 		</div>
 	</div>
 	<aside class="min-w-sm max-w-[500px] hidden sm:block">
-		<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="mask-b-from-60% drop-shadow-2xl drop-shadow-blue-50/20">
+		<div class="aspect-[3/4] sm:w-[400px] md:w-[500px]">
+			<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="w-full h-full mask-b-from-60% drop-shadow-2xl drop-shadow-blue-50/20">
+		</div>
 	</aside>
 </section>
