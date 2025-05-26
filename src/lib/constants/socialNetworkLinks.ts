@@ -15,7 +15,7 @@ export const socialNetworkLinks = [
   },
   {
     socialNetwork: "CV",
-    href: "/public/Santiago Rendon Munera CV 2025.pdf",
+    href: "/Santiago Rendon Munera CV 2025.pdf",
     Icon: CvIcon
   }
 ]
