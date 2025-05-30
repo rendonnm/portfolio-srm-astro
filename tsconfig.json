@@ -5,7 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "strict": true,
+    "noImplicitAny": true,
   },
   "extends": "astro/tsconfigs/strict",
   "include": [
