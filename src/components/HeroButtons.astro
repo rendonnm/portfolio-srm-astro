@@ -1,9 +1,10 @@
 ---
 import { socialNetworkLinks } from "../lib/constants/socialNetworkLinks";
+const classProps = Astro.props.class
 ---
 
-<nav class="mt-2">
-  <ul class="flex gap-5 justify-center sm:justify-start">
+<nav class=`mt-2 ${classProps}`>
+  <ul class="flex flex-wrap gap-5 justify-center sm:justify-start">
     {socialNetworkLinks.map(({ socialNetwork, href, Icon }) => (
     <li>
       <a

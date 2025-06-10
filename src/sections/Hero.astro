@@ -1,31 +1,53 @@
 ---
 import HeroButtons from "@/components/HeroButtons.astro";
 import ReadyToWorkBadge from "@/components/ReadyToWorkBadge.astro";
+import "@/styles/animations.css";
 ---
 
 <section class="flex mb-30" id="init">
-	<div class="flex flex-col w-[900px] sm:w-[290px] md:w-[900px] justify-center gap-3 text-center sm:text-start">
-		<ReadyToWorkBadge/>
-		<h1 class="text-[52px] font-bold bg-linear-to-r from-cyan-50 via-blue-100 to-indigo-50 bg-clip-text 
-		text-transparent">Hola, soy Santiago</h1>
-		<section class="flex flex-col mt-2">
-		<p class="font-bold text-2xl mb-4">Ingeniero Informático desde Medellín, Colombia 🇨🇴</p>
-		<p class="font-bod text-lg text-dark-default-800">
-			Especializado en el desarrollo de soluciones frontend que conectan con las personas y resuelven problemas reales.
+	<div
+		class="flex flex-col w-[900px] md:w-[1300px] justify-center gap-5 text-center sm:text-start h-full my-auto fade-in"
+	>
+		<ReadyToWorkBadge class="enter-animation" />
+		<header class="flex flex-col gap-2 enter-animation">
+			<h1
+				class="text-[52px] font-bold bg-linear-to-r from-cyan-50 via-blue-100 to-indigo-50 bg-clip-text
+		text-transparent leading-[2.5lh]"
+			>
+				Hola, soy Santiago
+			</h1>
+			<p class="font-bold text-2xl text-balance">
+				Ingeniero Informático de Medellín, Colombia 🇨🇴
+			</p>
+		</header>
+		<p
+			class="font-bod text-lg text-dark-default-800 text-balance enter-animation"
+		>
+			Especializado en el desarrollo de soluciones frontend que conectan con las
+			personas y resuelven problemas reales.
 		</p>
-		</section>
-		<footer>
-			<HeroButtons/>
-		</footer>
-		<div class="flex max-w-[500px] justify-center mx-auto sm:hidden">
-			<div class="aspect-[3/4] w-[350px] sm:w-[400px]">		
-					<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="w-full h-full mask-b-from-60% drop-shadow-2xl drop-shadow-blue-50/20">
+		<HeroButtons class="enter-animation" />
+		<div
+			class="flex h-[600px] justify-center mx-auto sm:hidden enter-image-animation"
+		>
+			<div class="aspect-[9/16] h-full">
+				<img
+					src="/foto-santiago.webp"
+					alt="Foto del ingeniero Santiago Rendón Múnera"
+					class="w-full h-full mask-b-from-60% drop-shadow-xl drop-shadow-blue-50/20"
+				/>
 			</div>
 		</div>
 	</div>
-	<aside class="min-w-sm max-w-[500px] hidden sm:block">
-		<div class="aspect-[3/4] sm:w-[400px] md:w-[500px]">
-			<img src="/foto-santiago.webp" alt="Foto del ingeniero Santiago Rendón Múnera" class="w-full h-full mask-b-from-60% drop-shadow-2xl drop-shadow-blue-50/20">
+	<aside
+		class="w-full h-[600px] justify-center hidden sm:flex enter-image-animation"
+	>
+		<div class="aspect-[9/16] h-full">
+			<img
+				src="/foto-santiago.webp"
+				alt="Foto del ingeniero Santiago Rendón Múnera"
+				class="w-full h-full mask-b-from-60% drop-shadow-xl drop-shadow-blue-50/20"
+			/>
 		</div>
 	</aside>
 </section>
