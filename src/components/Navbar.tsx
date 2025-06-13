@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { navSections } from "../lib/constants/headerNavSections"
+import { navSections } from '../lib/constants/headerNavSections'
 
 export const Navbar = () => {
   const [activeSection, setActiveSection] = useState<string>('')
@@ -8,7 +8,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       const sectionOffsets = navSections.map(({ id }) => {
         const el = document.getElementById(id)
-        if (!el) return { id, offset: Infinity }
+        if (!el) return { id, offset: Number.POSITIVE_INFINITY }
         return { id, offset: el.getBoundingClientRect().top }
       })
 
@@ -26,7 +26,7 @@ export const Navbar = () => {
   }, [])
 
   return (
-    <nav className="flex h-12 items-center justify-center px-6 rounded-full border border-zinc-600/75 bg-[#030511]/40 shadow-lg backdrop-blur-sm text-sm md:text-[16px]">
+    <nav className="flex h-10 md:h-12 items-center justify-center px-6 rounded-full border border-zinc-600/75 bg-[#030511]/40 shadow-lg backdrop-blur-sm text-sm md:text-[16px]">
       <ul className="flex gap-5 w-full">
         {navSections.map((section) => {
           const isActive = activeSection === section.id
