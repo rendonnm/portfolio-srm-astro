@@ -4,7 +4,6 @@ import Footer from "@/sections/Footer.astro";
 import Background from "@/components/Background.astro";
 ---
 
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -13,34 +12,39 @@ import Background from "@/components/Background.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Santiago Rendón Múnera Portfolio</title>
-		<meta name="description" content="Put your description here.">
-		<meta name="description" content="Soy Santiago Rendón, desarrollador fullstack de Medellín. 
+		<meta name="description" content="Put your description here." />
+		<meta
+			name="description"
+			content="Soy Santiago Rendón, desarrollador fullstack de Medellín. 
 		Construyo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework. 
-		Apasionado por el frontend, el backend y todo lo que tenga ritmo, lógica y propósito.">
+		Apasionado por el frontend, el backend y todo lo que tenga ritmo, lógica y propósito."
+		/>
 	</head>
 	<body class="relative min-h-screen w-full">
-	<Background/>
-	<Header/>
-	<main class="px-4 relative section py-18 md:py-18 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl">
-		<slot />
-	</main> 
-	<Footer/>
-	</body>	
+		<Background />
+		<Header />
+		<main
+			class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
+		>
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>
 
 <style>
 	@font-face {
 		font-family: "NunitoSans";
-		src: url('/NunitoSans.ttf') format("truetype");
+		src: url("/NunitoSans.ttf") format("truetype");
 		font-display: swap;
 	}
 	html,
 	body {
 		background-color: transparent;
-		font-family: 'NunitoSans', sans-serif;
+		font-family: "NunitoSans", sans-serif;
 		color: white;
 	}
-	:root{
+	:root {
 		background-color: black;
 		scroll-behavior: smooth;
 	}
