@@ -1,0 +1,56 @@
+---
+import { workExperience } from "@/lib/constants/workExperience";
+---
+
+<article id="experience" class="flex flex-col mb-30 max-w-3xl mx-auto px-2">
+  <h2 class="font-extrabold text-4xl mb-6">Experiencia laboral 💼</h2>
+  <section>
+    <ul class="ml-1">
+      {
+        workExperience.map((job, index) => {
+          const isLast = index === workExperience.length - 1;
+          const baseClasses = `
+            relative pl-8
+            before:content-['']
+            before:absolute before:left-0 before:top-2
+            before:w-4 before:h-4 before:rounded-full
+            before:bg-blue-600 before:border-2 before:border-zinc-300
+            after:content-['']
+            after:absolute after:left-[0.45rem] after:top-6
+            after:w-0.5 after:h-full after:bg-zinc-600
+          `;
+
+          const fadeOutMask =
+            "after:[mask-image:linear-gradient(to_bottom,black,transparent)]";
+          return (
+            <li
+              class={`${baseClasses} ${isLast ? fadeOutMask : ""}`.replace(
+                /\s+/g,
+                " ",
+              )}
+            >
+              <div class="relative flex gap-4 items-start h-max ">
+                <div>
+                  <h3 class="font-extrabold text-2xl mb-5 text-blue-100">
+                    {job.company}
+                  </h3>
+                  <div class="pl-2">
+                    <h4 class="font-bold text-xl">{job.position}</h4>
+                    <p class="font-bold text-lg text-dark-default-700 mb-5">
+                      {`${job.duration} - ${job.location}`}
+                    </p>
+                    <div class="mb-10">
+                      {job.description.split("\n\n").map((paragraph) => {
+                        return <p class="mb-[1lh]">{paragraph}</p>;
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</article>
