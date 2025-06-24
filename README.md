@@ -26,3 +26,6 @@ src/
 ├─ styles/          → global.css and tailwind.css
 `````
 ---
+
+## 🔦 Lighthouse
+![image](https://github.com/user-attachments/assets/967e568e-d7f1-4bd4-9949-96d2a7fb01df)
