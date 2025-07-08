@@ -14,7 +14,7 @@ export const MouseFollower = () => {
 
   return (
     <div
-      className="absolute h-32 w-32 bg-white/22 rounded-full blur-3xl pointer-events-none transition-all duration-75 ease-out "
+      className="absolute h-32 w-32 bg-white/22 rounded-full blur-3xl pointer-events-none transition-all duration-75 ease-out hidden lg:block"
       style={{
         left: `${coordinates.x}px`,
         top: `${coordinates.y}px`,
