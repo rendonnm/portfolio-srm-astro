@@ -2,6 +2,7 @@
 import Header from "@/sections/Header.astro";
 import Footer from "@/sections/Footer.astro";
 import Background from "@/components/Background.astro";
+import { MouseFollower } from "@/components/MouseFollower";
 ---
 
 <!doctype html>
@@ -23,6 +24,7 @@ import Background from "@/components/Background.astro";
 	<body class="relative min-h-screen w-full">
 		<Background />
 		<Header />
+		<MouseFollower client:only="react" />
 		<main
 			class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
 		>
