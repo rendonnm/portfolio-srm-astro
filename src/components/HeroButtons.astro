@@ -1,25 +1,27 @@
 ---
 import { socialNetworkLinks } from "../lib/constants/socialNetworkLinks";
-const classProps = Astro.props.class
+const classProps = Astro.props.class;
 ---
 
 <nav class=`mt-2 ${classProps}`>
   <ul class="flex flex-wrap gap-5 justify-center sm:justify-start">
-    {socialNetworkLinks.map(({ socialNetwork, href, Icon }) => (
-    <li>
-      <a
-        href={href}
-        class="flex gap-3 items-center justify-center pl-3 pr-4 py-1.5 border border-zinc-600/75 
+    {
+      socialNetworkLinks.map(({ socialNetwork, href, Icon }) => (
+        <li>
+          <a
+            href={href}
+            class="flex gap-3 items-center justify-center pl-3 pr-4 py-1.5 border border-zinc-600/75 
         rounded-full h-10 hover:scale-105 transition-all duration-250 ease-in-out shadow-md
-        hover:border-zinc-500 bg-[#0a1238] hover:bg-[#0e1742] "
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Visit ${socialNetwork} profile`}
-      >
-        <Icon class="size-5 md:size-6 text-white"/>
-        {socialNetwork}
-      </a>
-    </li>
-  ))}
+        hover:border-zinc-500 bg-[#0a1238] hover:bg-[#0e1742] cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit ${socialNetwork} profile`}
+          >
+            <Icon class="size-5 md:size-6 text-white" />
+            {socialNetwork}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
