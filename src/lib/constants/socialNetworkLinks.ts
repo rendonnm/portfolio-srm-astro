@@ -5,12 +5,12 @@ import CvIcon from "../../components/icons/CvIcon.astro"
 export const socialNetworkLinks = [
   {
     socialNetwork: "LinkedIn",
-    href: "https://www.linkedin.com/in/srm-col/",
+    href: "https://www.linkedin.com/in/rendonnm/",
     Icon: LinkedIn
   },
   {
     socialNetwork: "GitHub",
-    href: "https://github.com/RendonnM",
+    href: "https://github.com/rendonnm",
     Icon: GitHubIcon
   },
   {
