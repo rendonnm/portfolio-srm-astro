@@ -71,11 +71,17 @@ import { MouseFollower } from "@/components/MouseFollower";
 	</head>
 
 	<body class="relative min-h-screen w-full">
+		<a
+			href="#main-content"
+			class="bg-white text-blue-700 px-3 py-1 font-semibold absolute -top-100 focus:top-0 transition-all"
+			>Skip to main content</a
+		>
 		<Background />
 		<Header />
 
 		<main
 			class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
+			id="main-content"
 		>
 			<section aria-label="Hero">
 				<slot />
