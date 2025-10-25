@@ -5,13 +5,15 @@ export const workExperience = [
     duration: 'Jul. 2024 - Actualidad',
     location: 'Medellín, Colombia',
     description: `
-Desarrollo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, TypeScript y React, integrando backend con Python Django REST Framework.
+Lidero el primer proyecto de software desarrollado internamente para un cliente, impulsando la creación del área de desarrollo en la empresa.
 
-Diseño y prototipado de interfaces con Figma, asegurando una experiencia de usuario intuitiva y atractiva.
+Construyo interfaces accesibles y responsivas con React, TypeScript y Tailwind CSS; integrando APIs REST.
 
-Creación de dashboards interactivos en Power BI para visualización de datos y apoyo en la toma de decisiones estratégicas.
+Uso de arquitectura orientada a funcionalidades; gestiono estado global con Zustand, enrutamiento con React Router y sincronización del estado del servidor con TanStack Query.
 
-Implementación de soluciones de automatización de procesos con Power Platform (Power Automate, Power Apps) y UIPath.
+Implemento interfaces a partir de especificaciones de diseño, garantizando consistencia visual, accesibilidad y compatibilidad entre dispositivos y navegadores.
+
+Aseguro calidad con pruebas end-to-end (Playwright) y pruebas unitarias/de componentes (Jest, React Testing Library).
     `
   },
   {
