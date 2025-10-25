@@ -4,7 +4,7 @@ const classProps = Astro.props.class;
 ---
 
 <nav class=`mt-2 ${classProps}`>
-  <ul class="flex flex-wrap gap-5 justify-center sm:justify-start">
+  <ul class="flex flex-wrap gap-5 justify-center md:justify-start">
     {
       socialNetworkLinks.map(({ socialNetwork, href, Icon }) => (
         <li>
