@@ -5,11 +5,6 @@ export const navSections = [
     href: "#"
   },
   {
-    id: "proyects",
-    name: "Proyectos",
-    href: "#proyects"
-  },
-  {
     id: "experience",
     name: "Experiencia",
     href: "#experience"
