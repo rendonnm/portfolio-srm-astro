@@ -1,0 +1,36 @@
+---
+import { keyboardShortcuts } from "../lib/constants/keyboardShorcuts";
+---
+
+<section class="fixed h-full w-full z-11 bg-white/5">
+  <div class="h-full w-full flex items-center justify-center">
+    <article class="w-[800px] h-[400px] bg-zinc-800 rounded-2xl p-8">
+      <p class="font-black text-2xl mb-7">Keyboard shortcuts</p>
+      <section class="grid grid-cols-3">
+        {
+          keyboardShortcuts.map((sec) => {
+            return (
+              <div>
+                <p class="text-xl font-bold mb-4">{sec.title}</p>
+                <ul>
+                  {sec.shortcuts.map((shr) => {
+                    return (
+                      <li>
+                        <div class="flex justify-between">
+                          <p>{shr.name}</p>
+                          <div class="bg-black py-[1px] px-1 rounded-lg size-6 flex items-center justify-center border-[1px] border-zinc-500">
+                            <p class="">{shr.keys}</p>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })
+        }
+      </section>
+    </article>
+  </div>
+</section>

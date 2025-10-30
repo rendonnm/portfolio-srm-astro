@@ -2,7 +2,6 @@
 import Header from "@/sections/Header.astro";
 import Footer from "@/sections/Footer.astro";
 import Background from "@/components/Background.astro";
-import { MouseFollower } from "@/components/MouseFollower";
 ---
 
 <!doctype html>
@@ -78,7 +77,6 @@ import { MouseFollower } from "@/components/MouseFollower";
 		>
 		<Background />
 		<Header />
-
 		<main
 			class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
 			id="main-content"
@@ -90,6 +88,7 @@ import { MouseFollower } from "@/components/MouseFollower";
 
 		<Footer />
 	</body>
+	<script type="module" src="/src/lib/utils/keyboardShorcuts.ts"></script>
 </html>
 
 <style>
