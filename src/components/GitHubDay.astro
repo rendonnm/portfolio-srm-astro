@@ -1,0 +1,13 @@
+---
+import { gitHubColors } from "@/lib/constants/gitHub";
+import type { GitHubColors } from "@/lib/types/gitHub";
+
+export interface Props {
+  level: GitHubColors;
+}
+
+const { level } = Astro.props;
+const bgColor = gitHubColors[level];
+---
+
+<td class={`size-[10px] ${bgColor} rounded-xs`}></td>

@@ -1,0 +1,74 @@
+---
+import { GET } from "@/pages/api/githubActivity.json";
+import GitHubDay from "./GitHubDay.astro";
+import {
+  days,
+  dayNames,
+  shortDayNames,
+  monthNames,
+  shortMonthNames,
+} from "@/lib/constants/dates";
+
+import { gitHubUser } from "@/lib/constants/gitHub";
+import type { GitHubCalendar } from "@/lib/types/gitHub";
+
+const res = await GET(Astro);
+const calendar = (await res.json()) as GitHubCalendar;
+---
+
+<section
+  class="bg-[#0D1117] py-2 px-4 border border-[#3d444d] rounded-md overflow-auto"
+>
+  <header class="flex justify-between">
+    <h2>Actividad GitHub <span class="font-bold">@{gitHubUser}</span></h2>
+    <p class="text-sm">
+      <span class="font-bold">{calendar["totalContributions"]}</span> contribuciones
+      este año!
+    </p>
+  </header>
+  <div class="overflow-scroll">
+    <table
+      class="border-separate border-spacing-x-[3px] border-spacing-y-[3px]"
+    >
+      <thead>
+        <tr>
+          <th></th>
+          {
+            monthNames.map((month, index) => {
+              return (
+                <th colspan="4">
+                  <span class="sr-only">{month}</span>
+                  <p class="text-xs text-start">{shortMonthNames[index]}</p>
+                </th>
+              );
+            })
+          }
+        </tr>
+      </thead>
+      <tbody class="border-spacing-2.5">
+        {
+          days.map((day) => {
+            const isEven = day % 2 === 0;
+            return (
+              <tr class="h-2.5">
+                <th>
+                  <span class="sr-only">{dayNames[day]}</span>
+                  <p class="text-xs h-2.5">
+                    {isEven ? "" : shortDayNames[day]}
+                  </p>
+                </th>
+                {calendar.weeks.map((week) => {
+                  const contributionDay = week.contributionDays[day];
+                  if (contributionDay)
+                    return (
+                      <GitHubDay level={contributionDay.contributionLevel} />
+                    );
+                })}
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
