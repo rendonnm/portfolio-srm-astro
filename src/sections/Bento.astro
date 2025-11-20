@@ -1,25 +1,23 @@
 ---
 import BentoCard from "@/components/BentoCard.astro";
+import GitHubActivity from "@/components/GitHubActivity.astro";
 ---
 
 <article class="grid grid-cols-40 gap-4 auto-rows-fr mb-30">
   <BentoCard class="col-span-[24] row-start-1 row-end-10"> Spotify </BentoCard>
-  <BentoCard class="col-span-[20] row-start-1 row-end-24">
-    Historial Github
-  </BentoCard>
-  <BentoCard class="col-span-[15] row-start-1 row-end-24">
+  <BentoCard class="col-span-[20] row-start-1 row-end-20" />
+  <BentoCard class="col-span-[16] row-start-1 row-end-20">
     Trayectoria
   </BentoCard>
-  <BentoCard class="col-span-[24] row-start-10 row-end-34">
+  <BentoCard class="col-span-[24] row-start-10 row-end-30">
     My Tech Stack
   </BentoCard>
-  <BentoCard class="col-span-[8] row-start-34 row-end-43"> WPM </BentoCard>
-  <BentoCard class="col-span-[8] row-start-34 row-end-43"> Contacto </BentoCard>
-  <BentoCard class="col-span-[8] row-start-34 row-end-43">
-    Aprendiendo...
+  <BentoCard class="col-span-[10] row-start-20 row-end-30">
+    My Tech Stack
   </BentoCard>
-  <BentoCard class="col-span-[15] row-start-24 row-end-43">
-    Proyecto destacado
+
+  <BentoCard class="col-span-[34] row-start-30 row-end-43 overflow-hidden">
+    <GitHubActivity />
   </BentoCard>
-  <BentoCard class="col-span-[20] row-start-24 row-end-43"> Mapa </BentoCard>
+  <BentoCard class="col-span-[26] row-start-20 row-end-43" />
 </article>
