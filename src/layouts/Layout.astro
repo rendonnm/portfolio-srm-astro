@@ -7,105 +7,108 @@ import { MouseFollower } from "@/components/MouseFollower";
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
 
-		<title>Santiago Rendón Múnera – Ingeniero de software full-stack</title>
-		<meta
-			name="description"
-			content="Santiago Rendón Múnera, ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web escalables y accesibles utilizando JavaScript, TypeScript, React y Django REST Framework."
-		/>
-		<meta
-			name="keywords"
-			content="Santiago Rendón, Ingeniero de Software, Desarrollador Full Stack, React, TypeScript, Portafolio, Medellín"
-		/>
-		<link rel="canonical" href="https://santiagorendon.vercel.app/" />
-		<meta
-			property="og:title"
-			content="Santiago Rendón Múnera – Ingeniero de software full-stack"
-		/>
-		<meta
-			property="og:description"
-			content="Ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework."
-		/>
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://santiagorendon.vercel.app/" />
-		<meta
-			property="og:image"
-			content="https://santiagorendon.vercel.app/og-image.jpg"
-		/>
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="Santiago Rendón Múnera – Ingeniero de software full-stack"
-		/>
-		<meta
-			name="twitter:description"
-			content="Ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework."
-		/>
-		<meta
-			name="twitter:image"
-			content="https://santiagorendon.vercel.app/og-image.jpg"
-		/>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Santiago Rendón Múnera",
-				"url": "https://santiagorendon.vercel.app/",
-				"jobTitle": "Ingeniero de software full-stack",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Medellín",
-					"addressCountry": "CO"
-				},
-				"sameAs": [
-					"https://github.com/rendonnm",
-					"https://linkedin.com/in/rendonnm"
-				]
-			}
-		</script>
-	</head>
+    <title>Santiago Rendón Múnera – Ingeniero de software full-stack</title>
+    <meta
+      name="description"
+      content="Santiago Rendón Múnera, ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web escalables y accesibles utilizando JavaScript, TypeScript, React y Django REST Framework."
+    />
+    <meta
+      name="keywords"
+      content="Santiago Rendón, Ingeniero de Software, Desarrollador Full Stack, React, TypeScript, Portafolio, Medellín"
+    />
+    <link rel="canonical" href="https://santiagorendon.vercel.app/" />
+    <meta
+      property="og:title"
+      content="Santiago Rendón Múnera – Ingeniero de software full-stack"
+    />
+    <meta
+      property="og:description"
+      content="Ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://santiagorendon.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://santiagorendon.vercel.app/og-image.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Santiago Rendón Múnera – Ingeniero de software full-stack"
+    />
+    <meta
+      name="twitter:description"
+      content="Ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework."
+    />
+    <meta
+      name="twitter:image"
+      content="https://santiagorendon.vercel.app/og-image.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Santiago Rendón Múnera",
+        "url": "https://santiagorendon.vercel.app/",
+        "jobTitle": "Ingeniero de software full-stack",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Medellín",
+          "addressCountry": "CO"
+        },
+        "sameAs": [
+          "https://github.com/rendonnm",
+          "https://linkedin.com/in/rendonnm"
+        ]
+      }
+    </script>
+  </head>
 
-	<body class="relative min-h-screen w-full">
-		<a
-			href="#main-content"
-			class="bg-white text-blue-700 px-3 py-1 font-semibold absolute -top-100 focus:top-0 transition-all"
-			>Skip to main content</a
-		>
-		<Background />
-		<Header />
+  <body class="relative min-h-screen w-full">
+    <a
+      href="#main-content"
+      class="bg-white text-blue-700 px-3 py-1 font-semibold absolute -top-100 focus:top-0 transition-all"
+      >Skip to main content</a
+    >
+    <Background />
+    <Header />
 
-		<main
-			class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
-			id="main-content"
-		>
-			<section aria-label="Hero">
-				<slot />
-			</section>
-		</main>
+    <main
+      class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
+      id="main-content"
+    >
+      <section aria-label="Hero">
+        <slot />
+      </section>
+    </main>
 
-		<Footer />
-	</body>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	@font-face {
-		font-family: "NunitoSans";
-		src: url("/NunitoSans.ttf") format("truetype");
-		font-display: swap;
-	}
-	html,
-	body {
-		background-color: transparent;
-		font-family: "NunitoSans", sans-serif;
-		color: white;
-	}
-	:root {
-		background-color: black;
-		scroll-behavior: smooth;
-	}
+  :root {
+    color-scheme: light dark;
+  }
+  @font-face {
+    font-family: "NunitoSans";
+    src: url("/NunitoSans.ttf") format("truetype");
+    font-display: swap;
+  }
+  html,
+  body {
+    background-color: transparent;
+    font-family: "NunitoSans", sans-serif;
+    color: white;
+  }
+  :root {
+    background-color: black;
+    scroll-behavior: smooth;
+  }
 </style>
