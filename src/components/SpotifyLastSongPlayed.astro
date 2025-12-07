@@ -1,0 +1,26 @@
+---
+import Spotify from "@/components/icons/Spotify.astro";
+import CdPlayer from "./CdPlayer.astro";
+---
+
+<article class="flex flex-col">
+  <header class="flex justify-between items-center">
+    <p class="mb-3 text-md text-zinc-400">Last Played</p>
+    <a class="size-10 p-2 bg-zinc-900 rounded-full border border-zinc-600">
+      <Spotify />
+    </a>
+  </header>
+  <div class="flex flex-col items-center justify-start gap-5 w-full">
+    <CdPlayer
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81VePj-i0_Vh9SMS3IWXJFumdeQg9-6TJ8A&s"
+      alt="Caratura de esmeraldas"
+    />
+    <footer class="w-46">
+      <p class="text-md font-bold truncate">Apuesta Doble</p>
+      <p class="text-xs text-zinc-400 truncate">
+        Mañas Ru-Fino, Doble Porcion, Juan Sinatra,
+        otrkjlkasdjlkjsalkfdsfjkhsdkljfdshkjfhdsjk
+      </p>
+    </footer>
+  </div>
+</article>

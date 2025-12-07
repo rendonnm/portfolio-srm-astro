@@ -1,0 +1,24 @@
+---
+const props = Astro.props;
+---
+
+<div class="relative flex items-center justify-center">
+  <div
+    class="absolute size-4 bg-gradient-to-br from-zinc-700 via-zinc-800 to-black rounded-full z-10 shadow-xl border-1 border-zinc-500"
+  >
+    <div
+      class="absolute top-1 left-1 size-2 bg-white/30 rounded-full blur-[1px]"
+    >
+    </div>
+  </div>
+  <div class="absolute size-3 bg-black rounded-full z-20 shadow-inner"></div>
+  <img
+    src={props.src}
+    alt={props.alt}
+    class="size-40 rounded-full shadow-xl record-spin shadow-black/50 border-1 border-zinc-500/50 ring-1 ring-zinc-600/30"
+  />
+  <div
+    class="absolute inset-0 size-40 rounded-full bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"
+  >
+  </div>
+</div>
