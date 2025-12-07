@@ -1,0 +1,45 @@
+---
+import ClockMonkeyType from "@/components/icons/ClockMonkeyType.astro";
+import GameController from "@/components/icons/GameController.astro";
+import Language from "@/components/icons/Language.astro";
+import KeyBoard from "./icons/KeyBoard.astro";
+import { GET } from "@/pages/api/monkeyTypeStats";
+import type { BestResponse } from "@/lib/types/monkeyType";
+import type { Data } from "@/lib/types/monkeyType";
+
+const res = await GET(Astro);
+const data = (await res.json()) as Data;
+---
+
+<a
+  class="relative h-full w-full"
+  target="_blank"
+  rel="noopener norreferer"
+  href="https://monkeytype.com/profile/RendonnM"
+>
+  <div class="absolute h-full w-full flex items-center justify-end z-0">
+    <KeyBoard class="rotate-6 opacity-50 w-52" />
+  </div>
+
+  <header class="relative flex self-start gap-4">
+    <div class="flex gap-1 items-center">
+      <ClockMonkeyType class="size-4 fill-zinc-600" />
+      <p class="text-[16px]">15s</p>
+    </div>
+    <div class="flex gap-1 items-center">
+      <GameController class="size-5 fill-zinc-500" />
+      <p class="text-[16px]">{data.acc}%</p>
+    </div>
+    <div class="flex gap-1 items-center">
+      <Language class="size-5 fill-zinc-500" />
+      <p class="text-[16px]">EN</p>
+    </div>
+  </header>
+
+  <div class="relative w-full flex items-baseline mt-5">
+    <p class="font-semibold text-8xl leading-tight tracking-normal text-end">
+      {Math.floor(data.wpm)}
+    </p>
+    <p class="ml-2 text-2xl leading-none">wpm</p>
+  </div>
+</a>
