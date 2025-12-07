@@ -12,7 +12,7 @@ const data = (await res.json()) as Data;
 ---
 
 <a
-  class="relative h-full w-full"
+  class="relative h-full w-full flex flex-col justify-between"
   target="_blank"
   rel="noopener norreferer"
   href="https://monkeytype.com/profile/RendonnM"
@@ -21,7 +21,7 @@ const data = (await res.json()) as Data;
     <KeyBoard class="rotate-6 opacity-50 w-52" />
   </div>
 
-  <header class="relative flex self-start gap-4">
+  <header class="relative flex self-start gap-4 z-10">
     <div class="flex gap-1 items-center">
       <ClockMonkeyType class="size-4 fill-zinc-600" />
       <p class="text-[16px]">15s</p>
@@ -36,8 +36,8 @@ const data = (await res.json()) as Data;
     </div>
   </header>
 
-  <div class="relative w-full flex items-baseline mt-5">
-    <p class="font-semibold text-8xl leading-tight tracking-normal text-end">
+  <div class="relative w-full flex items-baseline z-10">
+    <p class="font-semibold text-8xl leading-tight tracking-normal">
       {Math.floor(data.wpm)}
     </p>
     <p class="ml-2 text-2xl leading-none">wpm</p>
