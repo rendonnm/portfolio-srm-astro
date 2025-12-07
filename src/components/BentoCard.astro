@@ -1,8 +1,8 @@
 ---
 const { class: userClass } = Astro.props;
-const bentoClass = `flex flex-col  rounded-3xl bg-[#0a1238] border-1 border-zinc-600/75 ${userClass} `;
+const bentoClass = `flex flex-col rounded-3xl p-5 bg-[#0D1117] border-1 border-[#3d444d] ${userClass} `;
 ---
 
-<section class={bentoClass}>
+<div class={bentoClass}>
   <slot />
-</section>
+</div>

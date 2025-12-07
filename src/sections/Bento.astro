@@ -1,23 +1,42 @@
 ---
 import BentoCard from "@/components/BentoCard.astro";
 import GitHubActivity from "@/components/GitHubActivity.astro";
+import MonkeyTypeStats from "@/components/MonkeyTypeStats.astro";
+import SpotifyLastSongPlayed from "@/components/SpotifyLastSongPlayed.astro";
 ---
 
-<article class="grid grid-cols-40 gap-4 auto-rows-fr mb-30">
-  <BentoCard class="col-span-[24] row-start-1 row-end-10"> Spotify </BentoCard>
-  <BentoCard class="col-span-[20] row-start-1 row-end-20" />
-  <BentoCard class="col-span-[16] row-start-1 row-end-20">
-    Trayectoria
-  </BentoCard>
-  <BentoCard class="col-span-[24] row-start-10 row-end-30">
-    My Tech Stack
-  </BentoCard>
-  <BentoCard class="col-span-[10] row-start-20 row-end-30">
-    My Tech Stack
+<article
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-40 gap-4 auto-rows-auto sm:auto-rows-fr mb-30"
+>
+  <BentoCard class="sm:col-span-2 lg:col-span-[24] lg:row-start-1 lg:row-end-4">
+    <MonkeyTypeStats />
   </BentoCard>
 
-  <BentoCard class="col-span-[34] row-start-30 row-end-43 overflow-hidden">
+  <BentoCard class="sm:col-span-2 lg:col-span-[20] lg:row-start-1 lg:row-end-5">
+    1
+  </BentoCard>
+
+  <BentoCard class="sm:row-span-2 lg:col-span-[16] lg:row-start-1 lg:row-end-5">
+    <SpotifyLastSongPlayed />
+  </BentoCard>
+
+  <BentoCard class="sm:col-span-1 lg:col-span-[24] lg:row-start-4 lg:row-end-7">
+    2
+  </BentoCard>
+
+  <BentoCard class="sm:col-span-1 lg:col-span-[10] lg:row-start-5 lg:row-end-7">
+    3
+  </BentoCard>
+
+  <BentoCard
+    class="sm:col-span-2 lg:col-span-[34] lg:row-start-7 lg:row-end-10 overflow-hidden"
+  >
     <GitHubActivity />
   </BentoCard>
-  <BentoCard class="col-span-[26] row-start-20 row-end-43" />
+
+  <BentoCard
+    class="sm:col-span-2 lg:col-span-[26] lg:row-start-5 lg:row-end-10"
+  >
+    4
+  </BentoCard>
 </article>

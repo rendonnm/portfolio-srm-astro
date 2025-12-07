@@ -33,3 +33,13 @@
 .enter-animation:nth-child(4) {
   animation-delay: 0.6s;
 }
+
+@keyframes record-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.record-spin {
+  animation: record-spin 7s infinite linear
+}
