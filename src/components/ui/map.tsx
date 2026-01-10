@@ -1,6 +1,5 @@
 import MapLibreGL, { type PopupOptions, type MarkerOptions } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useTheme } from "next-themes";
 import {
   createContext,
   forwardRef,
@@ -70,7 +69,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
   const [mapInstance, setMapInstance] = useState<MapLibreGL.Map | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isStyleLoaded, setIsStyleLoaded] = useState(false);
-  const { resolvedTheme } = useTheme();
+  const resolvedTheme = "dark";
   const currentStyleRef = useRef<MapStyleOption | null>(null);
 
   const mapStyles = useMemo(
@@ -120,9 +119,7 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
   useEffect(() => {
     if (!mapInstance || !resolvedTheme) return;
 
-    const newStyle =
-      resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
-
+    const newStyle = mapStyles.dark;
     if (currentStyleRef.current === newStyle) return;
 
     currentStyleRef.current = newStyle;
