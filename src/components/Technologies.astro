@@ -1,0 +1,41 @@
+---
+import { technologies } from "@/lib/constants/technologies";
+import "@/styles/animations.css";
+---
+
+<div class="flex relative h-full items-center">
+  <div class="hidden sm:block absolute top-0">
+    <p class="text-zinc-400">Stack tecnológico</p>
+  </div>
+  <div class="flex w-max items-center gap-8 carousel">
+    <div class="flex shrink-0 items-center gap-8">
+      {
+        technologies.map((tech) => {
+          const Logo = tech.logo;
+          return (
+            <div class="shrink-0 flex items-center justify-center">
+              <Logo class="h-14 lg:h-20 w-auto" aria-label={tech.name} />
+              <span class="sr-only">{tech.name}</span>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <div class="flex shrink-0 items-center gap-8" aria-hidden="true">
+      {
+        technologies.map((tech) => {
+          const Logo = tech.logo;
+          return (
+            <div class="shrink-0 flex items-center justify-center">
+              <Logo class="h-14 lg:h-20 w-auto" />
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+  <div class="hidden sm:block absolute bottom-0">
+    <p class="text-sm text-zinc-400">Tecnologías y herramientas principales.</p>
+  </div>
+</div>

@@ -43,3 +43,13 @@
 .record-spin {
   animation: record-spin 7s infinite linear
 }
+
+@keyframes carousel {
+  100% {
+    transform: translateX(calc(-50% - (2rem/ 2)));
+  }
+}
+
+.carousel {
+  animation: carousel 40s linear infinite;
+}
