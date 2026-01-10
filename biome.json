@@ -35,7 +35,7 @@
     "enabled": true
   },
   "files": {
-    "ignore": [],
+    "ignore": ["src/components/ui/map.tsx"],
     "ignoreUnknown": false
   },
   "vcs": {
