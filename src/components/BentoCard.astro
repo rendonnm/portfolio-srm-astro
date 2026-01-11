@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 const { class: userClass } = Astro.props;
 const bentoClass = twMerge(
   "flex flex-col rounded-3xl p-5 bg-[#0D1117] border-1 border-[#3d444d]",
-  userClass || ""
+  userClass
 );
 ---
 
