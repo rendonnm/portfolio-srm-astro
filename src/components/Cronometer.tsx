@@ -28,7 +28,7 @@ export function Cronometer() {
 
   return (
     <p
-      className="sm:text-5xl text-6xl font-semibold text-gradient clock-font
+      className="text-6xl font-semibold text-gradient clock-font
       bg-linear-to-r from-cyan-100 via-blue-200 to-indigo-200 bg-clip-text
 		  text-transparent"
     >
