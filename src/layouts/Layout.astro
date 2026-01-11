@@ -80,7 +80,7 @@ import { MouseFollower } from "@/components/MouseFollower";
     <Header />
 
     <main
-      class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl"
+      class="px-4 relative section py-14 sm:py-20 scroll-m-20 w-full mx-auto container lg:max-w-5xl md:max-w-3xl overflow-hidden"
       id="main-content"
     >
       <section aria-label="Hero">
@@ -94,13 +94,20 @@ import { MouseFollower } from "@/components/MouseFollower";
 
 <style>
   :root {
-    color-scheme: light dark;
+    color-scheme: dark;
   }
   @font-face {
     font-family: "NunitoSans";
     src: url("/NunitoSans.ttf") format("truetype");
     font-display: swap;
   }
+
+  @font-face {
+    font-family: "Orbitron";
+    src: url("/Orbitron.ttf") format("truetype");
+    font-display: swap;
+  }
+
   html,
   body {
     background-color: transparent;

@@ -3,16 +3,23 @@ import { gitHubColors } from "@/lib/constants/gitHub";
 import GitHubDay from "./GitHubDay.astro";
 import type { GitHubColors } from "@/lib/types/gitHub";
 
+const { gitHubUser } = Astro.props;
+
 const levels = Object.keys(gitHubColors) as GitHubColors[];
 ---
 
-<footer class="flex items-center gap-1 justify-end">
-  <p class="text-xs text-zinc-400">Menos</p>
-  {
-    levels.map((level) => {
-      const bgColor = gitHubColors[level];
-      return <div class={`size-[10px] ${bgColor} rounded-xs`} />;
-    })
-  }
-  <p class="text-xs text-zinc-400">Más</p>
+<footer class="flex items-center justify-between">
+  <p class="text-xs text-zinc-400 font-medium cursor-pointer hover:text-white">
+    @{gitHubUser}
+  </p>
+  <div class="flex items-center gap-1">
+    <p class="text-xs text-zinc-400">Menos</p>
+    {
+      levels.map((level) => {
+        const bgColor = gitHubColors[level];
+        return <div class={`size-[10px] ${bgColor} rounded-xs`} />;
+      })
+    }
+    <p class="text-xs text-zinc-400">Más</p>
+  </div>
 </footer>

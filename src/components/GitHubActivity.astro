@@ -12,6 +12,7 @@ import {
 import { gitHubUser } from "@/lib/constants/gitHub";
 import type { GitHubCalendar } from "@/lib/types/gitHub";
 import GitHubActivityFooter from "./GitHubActivityFooter.astro";
+import GitHubIcon from "@/components/icons/GitHubIcon.astro";
 
 const res = await GET(Astro);
 const calendar = (await res.json()) as GitHubCalendar;
@@ -20,11 +21,15 @@ const calendar = (await res.json()) as GitHubCalendar;
 <article class="overflow-hidden">
   <header class="flex justify-between mb-4">
     <div class="flex gap-1">
-      <h2>Actividad GitHub</h2>
-      <a
-        class="font-bold hover:scale-105 transition-transform"
-        href="https://github.com/rendonnm">@{gitHubUser}</a
-      >
+      <h2 class="font-semibold">
+        <a
+          class="flex items-center gap-2 cursor-pointer"
+          href="https://github.com/rendonnm"
+        >
+          <GitHubIcon height="20" />
+          Actividad GitHub
+        </a>
+      </h2>
     </div>
 
     <p class="text-sm">
@@ -77,5 +82,5 @@ const calendar = (await res.json()) as GitHubCalendar;
       </tbody>
     </table>
   </div>
-  <GitHubActivityFooter />
+  <GitHubActivityFooter gitHubUser={gitHubUser} />
 </article>

@@ -4,11 +4,9 @@ import CdPlayer from "./CdPlayer.astro";
 ---
 
 <article class="h-full w-full flex flex-col items-center">
-  <header class="flex w-full justify-between items-center mb-3">
-    <p class="font-semibold">Sonando ahora...</p>
-    <a class="size-10 p-2 bg-zinc-900 rounded-full border border-zinc-600">
-      <Spotify />
-    </a>
+  <header class="flex h-8 lg:h-7 w-full justify-between items-center mb-3">
+    <p class="font-semibold">Sonando ahora</p>
+    <Spotify class="h-full" />
   </header>
   <div class="flex flex-col items-center justify-center gap-5 w-full h-full">
     <CdPlayer
