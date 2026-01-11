@@ -33,7 +33,13 @@ import Projects from "@/components/Projects.astro";
   <BentoCard
     class="overflow-hidden sm:row-span-2 lg:col-span-16 lg:row-start-1 lg:row-end-5"
   >
-    <SpotifyLastSongPlayed />
+    <SpotifyLastSongPlayed server:defer>
+      <div slot="fallback" class="p-4 space-y-3 animate-puls h-full">
+        <div class="h-4 w-40 rounded bg-zinc-800"></div>
+        <div class="h-10 w-full rounded bg-zinc-900"></div>
+        <div class="h-10 w-2/3 rounded bg-zinc-900"></div>
+      </div>
+    </SpotifyLastSongPlayed>
   </BentoCard>
 
   <BentoCard
