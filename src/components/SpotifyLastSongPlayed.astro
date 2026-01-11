@@ -18,7 +18,10 @@ const data = (await res.json()) as SpotifyLastSong;
     target="_blank"
     class="flex flex-col items-center justify-center gap-5 w-full h-full"
   >
-    <CdPlayer src={data.cover} alt="Caratura de esmeraldas" />
+    <CdPlayer
+      src={data.cover}
+      alt={`Caratula de la canción ${data.title} de ${data.artist}`}
+    />
     <footer class="w-full">
       <p class="text-md font-bold truncate">{data.title}</p>
       <p class="text-xs text-zinc-400 truncate">
