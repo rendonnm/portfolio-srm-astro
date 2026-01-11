@@ -4,8 +4,11 @@ import RocketIcon from "@/assets/rocket.svg";
 import "@/styles/animations.css";
 ---
 
-<div class="relative w-full h-full">
-  <div class="flex absolute w-full h-full items-center justify-between z-10">
+<section class="relative w-full h-full" aria-labelledby="tech-stack-heading">
+  <div
+    class="flex absolute w-full h-full items-center justify-between z-10 pointer-events-none"
+    aria-hidden="true"
+  >
     <div
       class="bg-linear-to-r from-[#0D1117] to-transparent w-[10%] h-14 lg:h-16"
     >
@@ -15,20 +18,34 @@ import "@/styles/animations.css";
     >
     </div>
   </div>
+
   <div class="p-5 flex relative h-full w-full items-center">
     <header class="hidden sm:flex items-center gap-2 absolute top-0 pt-5">
-      <RocketIcon class="size-5" />
-      <p class="font-semibold">Stack tecnológico</p>
+      <RocketIcon class="size-5" aria-hidden="true" />
+      <h3 id="tech-stack-heading" class="font-semibold text-zinc-50">
+        Stack tecnológico
+      </h3>
     </header>
 
-    <div class="relative flex w-max items-center gap-8 carousel">
+    <div
+      class="relative flex w-max items-center gap-8 carousel"
+      role="list"
+      aria-label="Tecnologías y herramientas"
+    >
       <div class="flex shrink-0 items-center gap-8">
         {
           technologies.map((tech) => {
             const Logo = tech.logo;
             return (
-              <div class="shrink-0 flex items-center justify-center">
-                <Logo class="h-14 lg:h-16 w-auto" aria-label={tech.name} />
+              <div
+                class="shrink-0 flex items-center justify-center"
+                role="listitem"
+              >
+                <Logo
+                  class="h-14 lg:h-16 w-auto"
+                  role="img"
+                  aria-label={tech.name}
+                />
                 <span class="sr-only">{tech.name}</span>
               </div>
             );
@@ -49,10 +66,11 @@ import "@/styles/animations.css";
         }
       </div>
     </div>
+
     <footer class="hidden sm:block absolute bottom-0 pb-5">
       <p class="text-sm text-zinc-400">
         Tecnologías y herramientas principales.
       </p>
     </footer>
   </div>
-</div>
+</section>

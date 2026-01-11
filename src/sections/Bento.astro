@@ -3,40 +3,85 @@ import BentoCard from "@/components/BentoCard.astro";
 import GitHubActivity from "@/components/GitHubActivity.astro";
 import MonkeyTypeStats from "@/components/MonkeyTypeStats.astro";
 import SpotifyLastSongPlayed from "@/components/SpotifyLastSongPlayed.astro";
+import { BentoMap } from "@/components/BentoMap";
+import Technologies from "@/components/Technologies.astro";
+import BentoTitle from "@/components/BentoTitle.astro";
+import PointIcon from "@/assets/point.svg";
+import WorkTogether from "@/components/WorkTogether.astro";
+import Projects from "@/components/Projects.astro";
 ---
 
 <article
   class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-40 gap-4 auto-rows-auto sm:auto-rows-fr mb-30"
 >
-  <BentoCard class="sm:col-span-2 lg:col-span-[24] lg:row-start-1 lg:row-end-4">
-    <MonkeyTypeStats />
+  <BentoCard class="sm:col-span-2 lg:col-span-24 lg:row-start-1 lg:row-end-4">
+    <MonkeyTypeStats server:defer>
+      <div slot="fallback" class="p-4 space-y-3 animate-puls h-full">
+        <div class="h-4 w-40 rounded bg-zinc-800"></div>
+        <div class="h-10 w-full rounded bg-zinc-900"></div>
+        <div class="h-10 w-2/3 rounded bg-zinc-900"></div>
+      </div>
+    </MonkeyTypeStats>
   </BentoCard>
 
-  <BentoCard class="sm:col-span-2 lg:col-span-[20] lg:row-start-1 lg:row-end-5">
-    1
+  <BentoCard
+    class="relative sm:col-span-2 lg:col-span-20 lg:row-start-1 lg:row-end-5"
+  >
+    <Projects />
   </BentoCard>
 
-  <BentoCard class="sm:row-span-2 lg:col-span-[16] lg:row-start-1 lg:row-end-5">
+  <BentoCard
+    class="overflow-hidden sm:row-span-2 lg:col-span-16 lg:row-start-1 lg:row-end-5"
+  >
     <SpotifyLastSongPlayed />
   </BentoCard>
 
-  <BentoCard class="sm:col-span-1 lg:col-span-[24] lg:row-start-4 lg:row-end-7">
-    2
-  </BentoCard>
-
-  <BentoCard class="sm:col-span-1 lg:col-span-[10] lg:row-start-5 lg:row-end-7">
-    3
+  <BentoCard
+    class="relative p-0 overflow-hidden sm:col-span-1 lg:col-span-24 lg:row-start-4 lg:row-end-7"
+  >
+    <Technologies />
   </BentoCard>
 
   <BentoCard
-    class="sm:col-span-2 lg:col-span-[34] lg:row-start-7 lg:row-end-10 overflow-hidden"
+    class={`
+    relative
+    p-0 sm:col-span-1 lg:col-span-10 lg:row-start-5 lg:row-end-7 lg:hover:-rotate-2 
+    hover:text-amber-100 transition-all lg:hover:scale-102
+    `}
   >
-    <GitHubActivity />
+    <WorkTogether />
   </BentoCard>
 
   <BentoCard
-    class="sm:col-span-2 lg:col-span-[26] lg:row-start-5 lg:row-end-10"
+    class="sm:col-span-2 lg:col-span-34 lg:row-start-7 lg:row-end-10 overflow-hidden z-10"
   >
-    4
+    <GitHubActivity server:defer>
+      <div slot="fallback" class="p-4 space-y-3 animate-puls h-full">
+        <div class="h-4 w-40 rounded bg-zinc-800"></div>
+        <div class="h-10 w-full rounded bg-zinc-900"></div>
+        <div class="h-10 w-2/3 rounded bg-zinc-900"></div>
+      </div>
+    </GitHubActivity>
+  </BentoCard>
+
+  <BentoCard
+    class="relative p-0 overflow-hidden sm:col-span-2 lg:col-span-26 lg:row-start-5 lg:row-end-10"
+  >
+    <BentoTitle title="Ubicación" logo={PointIcon} />
+    <BentoMap client:only="react">
+      <div slot="fallback" class="flex-col p-4 space-y-3 animate-pulse gap-5">
+        <div class="p-4 space-y-3 animate-pulse">
+          <div class="h-4 w-40 rounded bg-zinc-800"></div>
+          <div class="h-10 w-full rounded bg-zinc-900"></div>
+          <div class="h-10 w-2/3 rounded bg-zinc-900"></div>
+        </div>
+
+        <div class="p-4 space-y-3 animate-pulse">
+          <div class="h-4 w-40 rounded bg-zinc-800"></div>
+          <div class="h-10 w-full rounded bg-zinc-900"></div>
+          <div class="h-10 w-2/3 rounded bg-zinc-900"></div>
+        </div>
+      </div>
+    </BentoMap>
   </BentoCard>
 </article>
