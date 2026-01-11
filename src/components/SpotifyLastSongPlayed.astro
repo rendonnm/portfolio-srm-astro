@@ -1,6 +1,11 @@
 ---
 import Spotify from "@/components/icons/Spotify.astro";
 import CdPlayer from "./CdPlayer.astro";
+import type { SpotifyLastSong } from "@/lib/types/spotify";
+
+import { GET } from "@/pages/api/spotifyLastSong.json";
+const res = await GET(Astro);
+const data = (await res.json()) as SpotifyLastSong;
 ---
 
 <article class="h-full w-full flex flex-col items-center">
@@ -8,17 +13,17 @@ import CdPlayer from "./CdPlayer.astro";
     <p class="font-semibold">Sonando ahora</p>
     <Spotify class="h-full" />
   </header>
-  <div class="flex flex-col items-center justify-center gap-5 w-full h-full">
-    <CdPlayer
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81VePj-i0_Vh9SMS3IWXJFumdeQg9-6TJ8A&s"
-      alt="Caratura de esmeraldas"
-    />
+  <a
+    href={data.url}
+    target="_blank"
+    class="flex flex-col items-center justify-center gap-5 w-full h-full"
+  >
+    <CdPlayer src={data.cover} alt="Caratura de esmeraldas" />
     <footer class="w-full">
-      <p class="text-md font-bold truncate">Apuesta Doble</p>
+      <p class="text-md font-bold truncate">{data.title}</p>
       <p class="text-xs text-zinc-400 truncate">
-        Mañas Ru-Fino, Doble Porcion, Juan Sinatra,
-        otrkjlkasdjlkjsalkfdsfjkhsdkljfdshkjfhdsjk
+        {data.artist}
       </p>
     </footer>
-  </div>
+  </a>
 </article>
