@@ -1,0 +1,17 @@
+---
+import { Cronometer } from "@/components/Cronometer";
+---
+
+<a
+  class="sm:absolute flex flex-col gap-2 items-center lg:justify-center cursor-pointer w-full h-full p-5"
+  href="mailto:srendonm@outlook.com"
+>
+  <p class="font-bold text-center text-xl">Trabajemos juntos 🚀</p>
+
+  <div
+    class="h-full w-full gap-5 items-center justify-center hidden sm:flex sm:flex-col lg:hidden"
+  >
+    <Cronometer client:load />
+    <p class="text-zinc-400 text-lg font-semibold">Colombia UTC -5</p>
+  </div>
+</a>
