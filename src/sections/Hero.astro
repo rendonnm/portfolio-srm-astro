@@ -1,46 +1,51 @@
 ---
+import { Image } from "astro:assets";
 import HeroButtons from "@/components/HeroButtons.astro";
 import ReadyToWorkBadge from "@/components/ReadyToWorkBadge.astro";
 import "@/styles/animations.css";
 ---
 
 <section
-	class="mb-30 mx-auto min-h-[calc(100vh-9rem)] grid grid-cols-1 md:grid-cols-2"
-	id="init"
+  class="mb-30 mx-auto min-h-[calc(100vh-9rem)] grid grid-cols-1 md:grid-cols-2"
+  id="init"
 >
-	<article
-		class="flex flex-col md:w-[380px] lg:w-[550px] justify-center gap-5 text-center md:text-start h-full my-auto fade-in mb-10 z-10"
-	>
-		<ReadyToWorkBadge class="enter-animation" />
-		<header class="flex flex-col gap-2 enter-animation">
-			<h1
-				class="text-[52px] font-bold bg-linear-to-r from-cyan-50 via-blue-100 to-indigo-50 bg-clip-text
+  <article
+    class="flex flex-col md:w-[380px] lg:w-[550px] justify-center gap-5 text-center md:text-start h-full my-auto fade-in mb-10 z-10"
+  >
+    <ReadyToWorkBadge class="enter-animation" />
+    <header class="flex flex-col gap-2 enter-animation">
+      <h1
+        class="text-[52px] font-bold bg-linear-to-r from-cyan-50 via-blue-100 to-indigo-50 bg-clip-text
 		text-transparent leading-[2.5lh]"
-			>
-				Hola, soy Santiago
-			</h1>
-			<h2 class="font-bold text-2xl text-balance">
-				Ingeniero Informático de Medellín, Colombia 🇨🇴
-			</h2>
-		</header>
-		<p
-			class="font-bod text-lg text-dark-default-800 text-balance enter-animation"
-		>
-			Especializado en el desarrollo de soluciones frontend que conectan con las
-			personas y resuelven problemas reales.
-		</p>
-		<HeroButtons class="enter-animation" />
-	</article>
-	<aside
-		class="flex my-auto w-full justify-center md:justify-end enter-image-animation"
-	>
-		<div class="aspect-[4/5] h-full -z-10">
-			<img
-				src="/foto-santiago.webp"
-				alt="Foto del ingeniero Santiago Rendón Múnera"
-				class="w-full h-full mask-b-from-60% drop-shadow-xl drop-shadow-blue-50/20 object-cover"
-				fetchpriority="high"
-			/>
-		</div>
-	</aside>
+      >
+        Hola, soy Santiago
+      </h1>
+      <h2 class="font-bold text-2xl text-balance">
+        Ingeniero Informático de Medellín, Colombia 🇨🇴
+      </h2>
+    </header>
+    <p
+      class="font-bod text-lg text-dark-default-800 text-balance enter-animation"
+    >
+      Especializado en el desarrollo de soluciones frontend que conectan con las
+      personas y resuelven problemas reales.
+    </p>
+    <HeroButtons class="enter-animation" />
+  </article>
+  <aside
+    class="flex my-auto w-full justify-center md:justify-end enter-image-animation"
+  >
+    <div class="aspect-[4/5] h-full -z-10">
+      <Image
+        src="/foto-santiago.webp"
+        alt="Foto del ingeniero Santiago Rendón Múnera"
+        width={550}
+        height={688}
+        format="webp"
+        quality={85}
+        class="w-full h-full mask-b-from-60% drop-shadow-xl drop-shadow-blue-50/20 object-cover"
+        loading="eager"
+      />
+    </div>
+  </aside>
 </section>

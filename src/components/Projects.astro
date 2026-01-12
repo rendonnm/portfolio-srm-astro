@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { socialNetworkLinks } from "@/lib/constants/socialNetworkLinks";
 const gitHub = socialNetworkLinks.find(
   (social) => social.socialNetwork === "GitHub"
@@ -37,9 +38,13 @@ const githubRef = gitHub?.href ?? "https://github.com/";
             aria-hidden="true"
           >
           </div>
-          <img
+          <Image
             src="/kanban.webp"
             alt="React Kanban Board - Sistema de gestión de tareas"
+            width={600}
+            height={400}
+            format="webp"
+            quality={80}
             loading="lazy"
             class="flex sm:hidden lg:flex w-full h-full object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
           />
@@ -81,9 +86,13 @@ const githubRef = gitHub?.href ?? "https://github.com/";
             aria-hidden="true"
           >
           </div>
-          <img
+          <Image
             src="/kanban.webp"
             alt="Checkmate - Aplicación de ajedrez"
+            width={600}
+            height={400}
+            format="webp"
+            quality={80}
             loading="lazy"
             class="flex sm:hidden lg:flex w-full h-full object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
           />
