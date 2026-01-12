@@ -1,21 +1,22 @@
 ---
 import { GET } from "@/pages/api/githubActivity.json";
 import GitHubDay from "./GitHubDay.astro";
-import {
-  days,
-  dayNames,
-  shortDayNames,
-  monthNames,
-  shortMonthNames,
-} from "@/lib/constants/dates";
+import { days } from "@/lib/constants/dates";
 
 import { gitHubUser } from "@/lib/constants/gitHub";
 import type { GitHubCalendar } from "@/lib/types/gitHub";
 import GitHubActivityFooter from "./GitHubActivityFooter.astro";
 import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import {
+  getMonthsOfGitHubActivity,
+  englishShortDayIntl,
+  englishLongDayIntl,
+} from "@/lib/utils/date";
 
 const res = await GET(Astro);
 const calendar = (await res.json()) as GitHubCalendar;
+
+const monthNames = getMonthsOfGitHubActivity(calendar);
 ---
 
 <article class="overflow-hidden">
@@ -45,11 +46,11 @@ const calendar = (await res.json()) as GitHubCalendar;
         <tr>
           <th></th>
           {
-            monthNames.map((month, index) => {
+            monthNames.map(([month, weeks]) => {
               return (
-                <th colspan="4">
+                <th colspan={weeks}>
                   <span class="sr-only">{month}</span>
-                  <p class="text-xs text-start">{shortMonthNames[index]}</p>
+                  <p class="text-xs text-start">{month}</p>
                 </th>
               );
             })
@@ -60,13 +61,15 @@ const calendar = (await res.json()) as GitHubCalendar;
         {
           days.map((day) => {
             const isEven = day % 2 === 0;
+            const dummyDate = new Date(2026, 2, day + 1);
+            const shortDayName = englishShortDayIntl.format(dummyDate);
+            const longDayName = englishLongDayIntl.format(dummyDate);
+
             return (
               <tr class="h-2.5">
                 <th>
-                  <span class="sr-only">{dayNames[day]}</span>
-                  <p class="text-xs h-2.5">
-                    {isEven ? "" : shortDayNames[day]}
-                  </p>
+                  <span class="sr-only">{longDayName}</span>
+                  <p class="text-xs h-2.5">{isEven ? "" : shortDayName}</p>
                 </th>
                 {calendar.weeks.map((week) => {
                   const contributionDay = week.contributionDays[day];

@@ -1,14 +1,19 @@
-import type { gitHubColors } from "@/lib/constants/gitHub"
+import type { gitHubColors } from "@/lib/constants/gitHub";
 
-export type GitHubColors = keyof typeof gitHubColors
+export type GitHubColors = keyof typeof gitHubColors;
 
-export type GitHubCalendar = {
+export interface GitHubCalendar {
   totalContributions: number;
-  weeks: Array<{
-    contributionDays: Array<{
-      date: string
-      contributionCount: number
-      contributionLevel: GitHubColors
-    }>;
-  }>;
-};
+  weeks: Week[];
+}
+
+export interface Week {
+  firstDay: Date;
+  contributionDays: ContributionDay[];
+}
+
+export interface ContributionDay {
+  date: Date;
+  contributionCount: number;
+  contributionLevel: GitHubColors;
+}
