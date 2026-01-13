@@ -2,7 +2,7 @@
 import Header from "@/sections/Header.astro";
 import Footer from "@/sections/Footer.astro";
 import Background from "@/components/Background.astro";
-import { MouseFollower } from "@/components/MouseFollower";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -89,6 +89,7 @@ import { MouseFollower } from "@/components/MouseFollower";
     </main>
 
     <Footer />
+    <Analytics />
   </body>
 </html>
 
