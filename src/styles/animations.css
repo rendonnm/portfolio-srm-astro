@@ -53,3 +53,7 @@
 .carousel {
   animation: carousel 40s linear infinite;
 }
+
+.carousel:hover {
+  animation-play-state: paused;
+}
