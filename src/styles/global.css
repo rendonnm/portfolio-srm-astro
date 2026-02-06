@@ -1,6 +1,24 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    animation-timing-function: linear !important;
+
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
 .clock-font {
   font-family: "Orbitron", "NunitoSans", sans-serif;
 }
