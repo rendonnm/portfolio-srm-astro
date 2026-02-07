@@ -1,8 +1,11 @@
 ---
 import { gitHubColors } from "@/lib/constants/gitHub";
 import type { GitHubColors } from "@/lib/types/gitHub";
+import { GitHubDaySquare } from "./GitHubDaySquare";
 
 export interface Props {
+  date: Date;
+  contributionCount: number;
   level: GitHubColors;
 }
 
@@ -10,4 +13,6 @@ const { level } = Astro.props;
 const bgColor = gitHubColors[level];
 ---
 
-<td class={`size-[10px] ${bgColor} rounded-xs`}></td>
+<td class={`size-2.5 rounded-xs`}>
+  <GitHubDaySquare client:load level={level} />
+</td>

@@ -1,6 +1,6 @@
 ---
 import { GET } from "@/pages/api/githubActivity.json";
-import GitHubDay from "./GitHubDay.astro";
+import GitHubDay from "@/components/GitHubDay.astro";
 import { days } from "@/lib/constants/dates";
 
 import { gitHubUser } from "@/lib/constants/gitHub";
@@ -19,7 +19,7 @@ const calendar = (await res.json()) as GitHubCalendar;
 const monthNames = getMonthsOfGitHubActivity(calendar);
 ---
 
-<article class="overflow-hidden">
+<article>
   <header class="flex justify-between mb-4 flex-wrap gap-2">
     <div class="flex gap-1">
       <h3 class="font-semibold">
@@ -40,7 +40,7 @@ const monthNames = getMonthsOfGitHubActivity(calendar);
   </header>
   <div class="flex overflow-x-auto mb-1">
     <table
-      class="border-separate border-spacing-x-[3px] border-spacing-y-[3px] min-w-max"
+      class="border-separate border-spacing-x-0.75 border-spacing-y-0.75 min-w-max"
     >
       <thead>
         <tr>
@@ -75,7 +75,11 @@ const monthNames = getMonthsOfGitHubActivity(calendar);
                   const contributionDay = week.contributionDays[day];
                   if (contributionDay)
                     return (
-                      <GitHubDay level={contributionDay.contributionLevel} />
+                      <GitHubDay
+                        contributionCount={contributionDay.contributionCount}
+                        date={contributionDay.date}
+                        level={contributionDay.contributionLevel}
+                      />
                     );
                 })}
               </tr>

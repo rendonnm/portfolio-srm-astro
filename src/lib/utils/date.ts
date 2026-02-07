@@ -31,6 +31,34 @@ export function getActualDate() {
   };
 }
 
+function checkIsSunday(day: number) {
+  return day === 0;
+}
+
+interface getFirstSundayDayOfWeekProps {
+  year: number;
+  month: number;
+  day: number;
+}
+
+export function getSundayDayOfWeek({
+  year,
+  month,
+  day,
+}: getFirstSundayDayOfWeekProps) {
+  let date = new Date(year, month, day);
+  let isSunday = checkIsSunday(date.getDay());
+
+  let newDay = day;
+  while (!isSunday) {
+    newDay = newDay - 1;
+    date = new Date(year, month, newDay);
+    isSunday = checkIsSunday(date.getDay());
+  }
+
+  return date;
+}
+
 export function getMonthsOfGitHubActivity(res: GitHubCalendar) {
   const contributions = new Map<number, Record<string, number>>();
 
