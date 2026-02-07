@@ -8,5 +8,5 @@ interface GitHubDayProps {
 export function GitHubDaySquare({ level }: GitHubDayProps) {
   const bgColor = gitHubColors[level];
 
-  return <div className={`relative size-full ${bgColor} rounded-xs `}></div>;
+  return <div className={`size-full ${bgColor} rounded-xs`}></div>;
 }
