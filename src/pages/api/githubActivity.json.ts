@@ -7,7 +7,7 @@ export async function GET(_context: APIContext) {
   try {
     const { day, month, year } = getActualDate();
     const firstSundayDate = getSundayDayOfWeek({ year, month, day });
-    const sundayDay = firstSundayDate.getDate();
+    const sundayDay = firstSundayDate.getUTCDate();
 
     const monthPadStart = String(month + 1).padStart(2, "0");
 

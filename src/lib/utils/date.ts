@@ -14,12 +14,12 @@ export const englishLongDayIntl = new Intl.DateTimeFormat("en-GB", {
 
 export function getActualDate() {
   const todayDate = new Date();
-  const day = todayDate.getDate();
-  const month = todayDate.getMonth();
-  const year = todayDate.getFullYear();
-  const hours = todayDate.getHours();
-  const minutes = todayDate.getMinutes();
-  const seconds = todayDate.getSeconds();
+  const day = todayDate.getUTCDate();
+  const month = todayDate.getUTCMonth();
+  const year = todayDate.getUTCFullYear();
+  const hours = todayDate.getUTCHours();
+  const minutes = todayDate.getUTCMinutes();
+  const seconds = todayDate.getUTCSeconds();
 
   return {
     day,
@@ -46,14 +46,14 @@ export function getSundayDayOfWeek({
   month,
   day,
 }: getFirstSundayDayOfWeekProps) {
-  let date = new Date(year, month, day);
-  let isSunday = checkIsSunday(date.getDay());
+  let date = new Date(Date.UTC(year, month, day));
+  let isSunday = checkIsSunday(date.getUTCDay());
 
   let newDay = day;
   while (!isSunday) {
     newDay = newDay - 1;
-    date = new Date(year, month, newDay);
-    isSunday = checkIsSunday(date.getDay());
+    date = new Date(Date.UTC(year, month, newDay));
+    isSunday = checkIsSunday(date.getUTCDay());
   }
 
   return date;
@@ -65,7 +65,7 @@ export function getMonthsOfGitHubActivity(res: GitHubCalendar) {
   for (const week of res.weeks) {
     const firstDay = week.firstDay;
     const date = new Date(firstDay);
-    const year = date.getFullYear();
+    const year = date.getUTCFullYear();
 
     const monthFormated = englishMonthIntl.format(date);
 

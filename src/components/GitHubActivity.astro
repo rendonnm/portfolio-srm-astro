@@ -61,7 +61,7 @@ const monthNames = getMonthsOfGitHubActivity(calendar);
         {
           days.map((day) => {
             const isEven = day % 2 === 0;
-            const dummyDate = new Date(2026, 2, day + 1); // This month starts on Sunday, the 1st
+            const dummyDate = new Date(Date.UTC(2026, 2, day + 1)); // This month starts on Sunday, the 1st
             const shortDayName = englishShortDayIntl.format(dummyDate);
             const longDayName = englishLongDayIntl.format(dummyDate);
 
