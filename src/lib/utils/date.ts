@@ -2,14 +2,17 @@ import type { GitHubCalendar } from "../types/gitHub";
 
 const englishMonthIntl = new Intl.DateTimeFormat("en-GB", {
   month: "short",
+  timeZone: "UTC",
 });
 
 export const englishShortDayIntl = new Intl.DateTimeFormat("en-GB", {
   weekday: "short",
+  timeZone: "UTC",
 });
 
 export const englishLongDayIntl = new Intl.DateTimeFormat("en-GB", {
   weekday: "long",
+  timeZone: "UTC",
 });
 
 export function getActualDate() {
@@ -60,32 +63,28 @@ export function getSundayDayOfWeek({
 }
 
 export function getMonthsOfGitHubActivity(res: GitHubCalendar) {
-  const contributions = new Map<number, Record<string, number>>();
+  const monthsMap = new Map<
+    string,
+    { month: string; count: number; firstDate: Date }
+  >();
 
   for (const week of res.weeks) {
-    const firstDay = week.firstDay;
-    const date = new Date(firstDay);
-    const year = date.getUTCFullYear();
+    const firstDayDate = new Date(week.firstDay + "T00:00:00Z");
+    const yearMonth = `${firstDayDate.getUTCFullYear()}-${firstDayDate.getUTCMonth()}`;
 
-    const monthFormated = englishMonthIntl.format(date);
-
-    if (!contributions.has(year)) {
-      contributions.set(year, {});
-    }
-
-    const contributionsMap = contributions.get(year);
-    if (contributionsMap) {
-      contributionsMap[monthFormated] =
-        (contributionsMap?.[monthFormated] ?? 0) + 1;
+    if (monthsMap.has(yearMonth)) {
+      monthsMap.get(yearMonth)!.count++;
+    } else {
+      monthsMap.set(yearMonth, {
+        month: englishMonthIntl.format(firstDayDate),
+        count: 1,
+        firstDate: firstDayDate,
+      });
     }
   }
 
-  const months = [];
-  for (const [_, value] of contributions) {
-    for (const val of Object.entries(value)) {
-      months.push(val);
-    }
-  }
-
-  return months;
+  return Array.from(monthsMap.values())
+    .sort((a, b) => a.firstDate.getTime() - b.firstDate.getTime())
+    .map(({ month, count }) => [month, count])
+    .slice(0, -1);
 }
