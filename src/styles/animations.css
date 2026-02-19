@@ -44,6 +44,10 @@
   animation: record-spin 7s infinite linear
 }
 
+.record-spin:hover {
+  animation-play-state: paused;
+}
+
 @keyframes carousel {
   100% {
     transform: translateX(calc(-50% - (2rem/ 2)));
