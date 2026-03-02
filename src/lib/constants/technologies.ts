@@ -9,6 +9,7 @@ import Vitest from "@/assets/vitest.svg";
 import Playwright from "@/assets/playwright.svg";
 import Jest from "@/assets/jest.svg";
 import TanStack from "@/assets/tanstack.svg";
+import Nextjs from "@/assets/nexjs.svg";
 
 export const technologies = [
   {
@@ -49,6 +50,11 @@ export const technologies = [
   {
     name: "Vitest",
     logo: Vitest,
+    href: "",
+  },
+  {
+    name: "Next.js",
+    logo: Nextjs,
     href: "",
   },
   {
