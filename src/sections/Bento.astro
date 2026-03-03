@@ -9,6 +9,8 @@ import BentoTitle from "@/components/BentoTitle.astro";
 import PointIcon from "@/assets/point.svg";
 import WorkTogether from "@/components/WorkTogether.astro";
 import Projects from "@/components/Projects.astro";
+
+const { copy } = Astro.props;
 ---
 
 <article
@@ -27,13 +29,13 @@ import Projects from "@/components/Projects.astro";
   <BentoCard
     class="relative sm:col-span-2 lg:col-span-20 lg:row-start-1 lg:row-end-5"
   >
-    <Projects />
+    <Projects copy={copy.projects} />
   </BentoCard>
 
   <BentoCard
     class="overflow-hidden sm:row-span-2 lg:col-span-16 lg:row-start-1 lg:row-end-5"
   >
-    <SpotifyLastSongPlayed server:defer>
+    <SpotifyLastSongPlayed copy={copy.spotify} server:defer>
       <div slot="fallback" class="p-4 space-y-3 animate-puls h-full">
         <div class="h-4 w-40 rounded bg-zinc-800"></div>
         <div class="h-10 w-full rounded bg-zinc-900"></div>
@@ -45,7 +47,7 @@ import Projects from "@/components/Projects.astro";
   <BentoCard
     class="relative p-0 overflow-hidden sm:col-span-1 lg:col-span-24 lg:row-start-4 lg:row-end-7"
   >
-    <Technologies />
+    <Technologies copy={copy.technologies} />
   </BentoCard>
 
   <BentoCard
@@ -55,11 +57,11 @@ import Projects from "@/components/Projects.astro";
     hover:text-amber-100 transition-all lg:hover:scale-102
     `}
   >
-    <WorkTogether />
+    <WorkTogether copy={copy.workTogether} />
   </BentoCard>
 
   <BentoCard class="sm:col-span-2 lg:col-span-34 lg:row-start-7 lg:row-end-10">
-    <GitHubActivity server:defer>
+    <GitHubActivity copy={copy.github} server:defer>
       <div slot="fallback" class="p-4 space-y-3 animate-puls h-full">
         <div class="h-4 w-40 rounded bg-zinc-800"></div>
         <div class="h-10 w-full rounded bg-zinc-900"></div>
@@ -71,7 +73,7 @@ import Projects from "@/components/Projects.astro";
   <BentoCard
     class="relative p-0 overflow-hidden sm:col-span-2 lg:col-span-26 lg:row-start-5 lg:row-end-10"
   >
-    <BentoTitle title="Ubicación" logo={PointIcon} />
+    <BentoTitle title={copy.location} logo={PointIcon} />
     <BentoMap client:only="react">
       <div slot="fallback" class="flex-col p-4 space-y-3 animate-pulse gap-5">
         <div class="p-4 space-y-3 animate-pulse">

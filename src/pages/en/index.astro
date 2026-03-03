@@ -6,7 +6,7 @@ import WorkExperience from "@/sections/WorkExperience.astro";
 import Bento from "@/sections/Bento.astro";
 import "@/styles/global.css";
 
-import { getLocaleFromPath, t } from "../lib/i18n";
+import { getLocaleFromPath, t } from "../../lib/i18n";
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const copy = t(locale);

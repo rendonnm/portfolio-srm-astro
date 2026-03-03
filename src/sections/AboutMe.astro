@@ -1,10 +1,14 @@
 ---
 import SobreMi from "../content/about-me-paragraph.mdx";
+import SobreMiEn from "../content/en/about-me-paragraph.mdx";
+
+const { copy, locale } = Astro.props;
+const Content = locale === "en" ? SobreMiEn : SobreMi;
 ---
 
 <section id="about-me" class="flex flex-col mb-30 max-w-3xl mx-auto px-2">
-  <h3 class="font-extrabold text-4xl mb-6">Sobre mí 👨🏻‍💻</h3>
+  <h3 class="font-extrabold text-4xl mb-6">{copy.title}</h3>
   <div class="[&>p]:mb-[1lh]">
-    <SobreMi />
+    <Content />
   </div>
 </section>

@@ -6,11 +6,13 @@ import type { SpotifyLastSong } from "@/lib/types/spotify";
 import { GET } from "@/pages/api/spotifyLastSong.json";
 const res = await GET(Astro);
 const data = (await res.json()) as SpotifyLastSong;
+
+const { copy } = Astro.props;
 ---
 
 <article class="h-full w-full flex flex-col items-center">
   <header class="flex h-8 lg:h-7 w-full justify-between items-center mb-3">
-    <p class="font-semibold">Sonando ahora</p>
+    <p class="font-semibold">{copy.nowPlaying}</p>
     <Spotify class="h-full" />
   </header>
   <a

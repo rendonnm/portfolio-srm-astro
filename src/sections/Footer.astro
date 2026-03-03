@@ -1,6 +1,14 @@
 ---
 import { socialNetworkLinks } from "../lib/constants/socialNetworkLinks";
 import { navSections } from "../lib/constants/headerNavSections";
+
+const { copy } = Astro.props;
+
+const navNames: Record<string, string> = {
+  init: copy.nav.init,
+  experience: copy.nav.experience,
+  "about-me": copy.nav.aboutMe,
+};
 ---
 
 <footer class="bg-[#030511] relative">
@@ -37,19 +45,20 @@ import { navSections } from "../lib/constants/headerNavSections";
         <p class="text-xs text-zinc-400">© 2025 Santiago Rendón Múnera</p>
       </div>
       <aside class="grid grid-cols-1">
-        <p class="font-bold">Portfolio</p>
+        <p class="font-bold">{copy.footer.portfolioLabel}</p>
         <ul class="flex flex-col gap-3 text-sm">
           {
             navSections.map((section) => {
+              const name = navNames[section.id] ?? section.name;
               return (
                 <li>
                   <a
                     href={section.href}
                     class="text-white/60 text-md font-light hover:text-white/80"
                     rel="noopener noreferrer"
-                    aria-label={`Visit ${section.name} section`}
+                    aria-label={`Visit ${name} section`}
                   >
-                    {section.name}
+                    {name}
                   </a>
                 </li>
               );

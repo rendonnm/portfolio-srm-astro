@@ -2,6 +2,8 @@
 import { technologies } from "@/lib/constants/technologies";
 import RocketIcon from "@/assets/rocket.svg";
 import "@/styles/animations.css";
+
+const { copy } = Astro.props;
 ---
 
 <section class="relative w-full h-full" aria-labelledby="tech-stack-heading">
@@ -23,7 +25,7 @@ import "@/styles/animations.css";
     <header class="hidden sm:flex items-center gap-2 absolute top-0 pt-5">
       <RocketIcon class="size-5" aria-hidden="true" />
       <h3 id="tech-stack-heading" class="font-semibold text-zinc-50">
-        Stack tecnológico
+        {copy.heading}
       </h3>
     </header>
 
@@ -69,7 +71,7 @@ import "@/styles/animations.css";
 
     <footer class="hidden sm:block absolute bottom-0 pb-5">
       <p class="text-sm text-zinc-400">
-        Tecnologías y herramientas principales.
+        {copy.footer}
       </p>
     </footer>
   </div>

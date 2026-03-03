@@ -1,17 +1,19 @@
 ---
 import { Cronometer } from "@/components/Cronometer";
+
+const { copy } = Astro.props;
 ---
 
 <a
   class="sm:absolute flex flex-col gap-2 items-center lg:justify-center cursor-pointer w-full h-full p-5"
   href="mailto:srendonm@outlook.com"
 >
-  <h3 class="font-bold text-center text-lg">Construyamos juntos 🚀</h3>
+  <h3 class="font-bold text-center text-lg">{copy.cta}</h3>
 
   <div
     class="h-full w-full gap-5 items-center justify-center hidden sm:flex sm:flex-col lg:hidden"
   >
     <Cronometer client:load />
-    <p class="text-zinc-400 text-lg font-semibold">Colombia UTC -5</p>
+    <p class="text-zinc-400 text-lg font-semibold">{copy.timezone}</p>
   </div>
 </a>

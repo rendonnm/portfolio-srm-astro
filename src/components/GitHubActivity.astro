@@ -17,6 +17,8 @@ const res = await GET(Astro);
 const calendar = (await res.json()) as GitHubCalendar;
 
 const monthNames = getMonthsOfGitHubActivity(calendar);
+
+const { copy } = Astro.props;
 ---
 
 <article>
@@ -28,14 +30,15 @@ const monthNames = getMonthsOfGitHubActivity(calendar);
           href="https://github.com/rendonnm"
         >
           <GitHubIcon height="20" />
-          Actividad GitHub
+          {copy.label}
         </a>
       </h3>
     </div>
 
     <p class="text-sm">
-      <span class="font-bold">{calendar["totalContributions"]}</span> contribuciones
-      este año!
+      <span class="font-bold">{calendar["totalContributions"]}</span>{" "}{
+        copy.contributions
+      }
     </p>
   </header>
   <div class="flex overflow-x-auto mb-1">
@@ -89,5 +92,5 @@ const monthNames = getMonthsOfGitHubActivity(calendar);
       </tbody>
     </table>
   </div>
-  <GitHubActivityFooter gitHubUser={gitHubUser} />
+  <GitHubActivityFooter gitHubUser={gitHubUser} copy={copy} />
 </article>

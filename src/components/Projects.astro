@@ -2,10 +2,12 @@
 import { Image } from "astro:assets";
 import { socialNetworkLinks } from "@/lib/constants/socialNetworkLinks";
 const gitHub = socialNetworkLinks.find(
-  (social) => social.socialNetwork === "GitHub"
+  (social) => social.socialNetwork === "GitHub",
 );
 
 const githubRef = gitHub?.href ?? "https://github.com/";
+
+const { copy } = Astro.props;
 ---
 
 <section
@@ -18,11 +20,11 @@ const githubRef = gitHub?.href ?? "https://github.com/";
         id="projects-heading"
         class="text-2xl font-bold text-zinc-50 leading-tight tracking-tight"
       >
-        Mira en qué he estado
+        {copy.headingStart}
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
         >
-          trabajando últimamente
+          {copy.headingEnd}
         </span>
       </h3>
     </header>
