@@ -1,31 +1,28 @@
 import type { WorkExperience } from "../types/workExperience";
+import type { Locale } from "../i18n";
 import IggaNetwork from "../../content/work/1-igga-network.mdx";
 import IggaFrontend from "../../content/work/2-igga-frontend.mdx";
 import DominaWork from "../../content/work/3-domina.mdx";
+import IggaNetworkEn from "../../content/work/en/1-igga-network.mdx";
+import IggaFrontendEn from "../../content/work/en/2-igga-frontend.mdx";
+import DominaWorkEn from "../../content/work/en/3-domina.mdx";
 
-export const workExperience: WorkExperience[] = [
-  {
-    company: "Domina Entrega Total S.A.S",
-    position: "Desarrollador de Software",
-    duration: "Ene. 2026 - Actualidad",
-    location: "Medellín, Colombia",
-    url: "https://domina.com.co/",
-    description: DominaWork,
-  },
-  {
-    company: "IGGA S.A.S.",
-    position: "Profesional A (Desarrollador de Software)",
-    duration: "Jul. 2024 - Dic. 2025",
-    location: "Medellín, Colombia",
-    url: "https://igga.com.co/",
-    description: IggaFrontend,
-  },
-  {
-    company: "IGGA S.A.S.",
-    position: "Profesional A (Analista de Redes)",
-    duration: "Nov. 2022 - Jul. 2024",
-    location: "Medellín, Colombia",
-    url: "https://igga.com.co/",
-    description: IggaNetwork,
-  },
-];
+type JobMeta = Pick<
+  WorkExperience,
+  "company" | "position" | "duration" | "location" | "url"
+>;
+
+const descriptions = {
+  es: [DominaWork, IggaFrontend, IggaNetwork],
+  en: [DominaWorkEn, IggaFrontendEn, IggaNetworkEn],
+} satisfies Record<Locale, WorkExperience["description"][]>;
+
+export function getWorkExperience(
+  locale: Locale,
+  jobs: JobMeta[],
+): WorkExperience[] {
+  return jobs.map((job, i) => ({
+    ...job,
+    description: descriptions[locale][i],
+  }));
+}
