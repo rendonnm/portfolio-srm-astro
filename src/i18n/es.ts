@@ -18,11 +18,11 @@ export const es = {
     title: "Experiencia laboral 💼",
     jobs: [
       {
-        company: "Domina Entrega Total S.A.S",
-        position: "Desarrollador de Software",
-        duration: "Ene. 2026 - Actualidad",
+        company: "Scotiabank",
+        position: "Frontend Software Engineer Specialist",
+        duration: "Mar. 2026 - Actualidad",
         location: "Medellín, Colombia",
-        url: "https://domina.com.co/",
+        url: "https://scotiabank.com/",
       },
       {
         company: "IGGA S.A.S.",
