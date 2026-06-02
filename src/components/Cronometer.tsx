@@ -1,4 +1,4 @@
-import { getActualDate } from "@/lib/utils/date";
+import { dateFormatter, getActualDate } from "@/lib/utils/date";
 import { useEffect, useState } from "react";
 
 function getFormatedTime() {

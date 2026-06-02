@@ -1,11 +1,11 @@
 import { gitHubUser } from "@/lib/constants/gitHub";
 import { getGitHubActivity } from "@/services/getGitHubActivity";
 import type { APIContext } from "astro";
-import { getActualDate, getSundayDayOfWeek } from "@/lib/utils/date";
+import { getActualUTCDate, getSundayDayOfWeek } from "@/lib/utils/date";
 
 export async function GET(_context: APIContext) {
   try {
-    const { day, month, year } = getActualDate();
+    const { day, month, year } = getActualUTCDate();
     const firstSundayDate = getSundayDayOfWeek({ year, month, day });
     const sundayDay = firstSundayDate.getUTCDate();
 

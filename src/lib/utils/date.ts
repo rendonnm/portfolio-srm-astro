@@ -15,7 +15,18 @@ export const englishLongDayIntl = new Intl.DateTimeFormat("en-GB", {
   timeZone: "UTC",
 });
 
-export function getActualDate() {
+export const dateFormatter = new Intl.DateTimeFormat("es-CO", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  timeZone: "America/Bogota",
+  hour12: false,
+});
+
+export function getActualUTCDate() {
   const todayDate = new Date();
   const day = todayDate.getUTCDate();
   const month = todayDate.getUTCMonth();
@@ -31,6 +42,23 @@ export function getActualDate() {
     hours,
     minutes,
     seconds,
+  };
+}
+
+export function getActualDate() {
+  const parts = Object.fromEntries(
+    dateFormatter
+      .formatToParts(new Date())
+      .map((part) => [part.type, part.value]),
+  );
+
+  return {
+    day: parseInt(parts.day, 10),
+    month: parseInt(parts.month, 10) - 1,
+    year: parseInt(parts.year, 10),
+    hours: parseInt(parts.hour, 10),
+    minutes: parseInt(parts.minute, 10),
+    seconds: parseInt(parts.second, 10),
   };
 }
 
