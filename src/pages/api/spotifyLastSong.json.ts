@@ -5,12 +5,6 @@ const clientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET;
 const refreshToken = import.meta.env.SPOTIFY_REFRESH_TOKEN;
 
 async function getAccessToken() {
-  console.log("Spotify env config", {
-    hasClientId: !!clientId,
-    hasClientSecret: !!clientSecret,
-    hasRefreshToken: !!refreshToken,
-  });
-
   if (!clientId || !clientSecret || !refreshToken) {
     throw new Error("Config de Spotify incompleta");
   }
@@ -49,7 +43,7 @@ export async function GET(_context: APIContext) {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-      }
+      },
     );
 
     if (!resp.ok) {
@@ -60,7 +54,7 @@ export async function GET(_context: APIContext) {
         {
           status: 500,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     }
 
