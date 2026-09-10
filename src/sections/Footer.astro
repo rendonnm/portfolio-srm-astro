@@ -9,6 +9,8 @@ const navNames: Record<string, string> = {
   experience: copy.nav.experience,
   "about-me": copy.nav.aboutMe,
 };
+
+const actualYear = new Date().getFullYear();
 ---
 
 <footer class="bg-[#030511] relative">
@@ -42,7 +44,9 @@ const navNames: Record<string, string> = {
             }
           </ul>
         </nav>
-        <p class="text-xs text-zinc-400">© 2025 Santiago Rendón Múnera</p>
+        <p class="text-xs text-zinc-400">
+          © {actualYear} Santiago Rendón Múnera
+        </p>
       </div>
       <aside class="grid grid-cols-1">
         <p class="font-bold">{copy.footer.portfolioLabel}</p>
