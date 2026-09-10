@@ -5,10 +5,8 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-
 import vercel from "@astrojs/vercel";
 
-// https://astro.build/config
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -21,8 +19,8 @@ export default defineConfig({
       },
     },
     plugins: [tailwindcss()],
-    optimizeDeps: {
-      exclude: ["maplibre-gl"],
+    ssr: {
+      noExternal: ["maplibre-gl"],
     },
   },
   i18n: {

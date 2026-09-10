@@ -17,6 +17,7 @@ import {
 import { createPortal } from "react-dom";
 import { X, Minus, Plus, Locate, Maximize, Loader2 } from "lucide-react";
 import type * as GeoJSON from "geojson";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 
 import { cn } from "@/lib/utils";
 
@@ -86,6 +87,8 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
 
   useEffect(() => {
     if (!containerRef.current) return;
+
+    MapLibreGL.setWorkerUrl(workerUrl);
 
     const initialStyle = mapStyles.dark;
     currentStyleRef.current = initialStyle;
