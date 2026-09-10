@@ -45,6 +45,7 @@ export const es = {
     location: "Ubicación",
     technologies: {
       heading: "Stack tecnológico",
+      ariaLabel: "Tecnologías y herramientas",
       footer: "Tecnologías y herramientas principales.",
     },
     workTogether: {

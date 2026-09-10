@@ -45,6 +45,7 @@ export const en = {
     location: "Location",
     technologies: {
       heading: "Tech stack",
+      ariaLabel: "Technologies and tools",
       footer: "Main technologies and tools.",
     },
     workTogether: {

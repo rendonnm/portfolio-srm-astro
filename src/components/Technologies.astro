@@ -32,7 +32,7 @@ const { copy } = Astro.props;
     <div
       class="relative flex w-max items-center gap-8 carousel"
       role="list"
-      aria-label="Tecnologías y herramientas"
+      aria-label={copy.ariaLabel}
     >
       <div class="flex shrink-0 items-center gap-8">
         {
@@ -48,7 +48,6 @@ const { copy } = Astro.props;
                   role="img"
                   aria-label={tech.name}
                 />
-                <span class="sr-only">{tech.name}</span>
               </div>
             );
           })
