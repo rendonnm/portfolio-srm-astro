@@ -68,13 +68,23 @@ export async function GET(_context: APIContext) {
       });
     }
 
+    const albumImages = (item.track.album.images ?? []) as Array<{
+      width: number;
+      url: string;
+    }>;
+    const cover =
+      albumImages
+        .filter((image) => image.width >= 240)
+        .sort((first, second) => first.width - second.width)[0] ??
+      albumImages[0];
+
     const track = {
       title: item.track.name,
       artist: item.track.artists
         .map((a: { name: string }) => a.name)
         .join(", "),
       url: item.track.external_urls.spotify,
-      cover: item.track.album.images?.[0]?.url ?? null,
+      cover: cover?.url ?? null,
       playedAt: item.played_at,
     };
 
