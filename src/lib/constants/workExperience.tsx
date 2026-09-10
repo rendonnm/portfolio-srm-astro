@@ -9,7 +9,7 @@ import ScotiabankWorkEn from "../../content/work/en/3-scotiabank.mdx";
 
 type JobMeta = Pick<
   WorkExperience,
-  "company" | "position" | "duration" | "location" | "url"
+  "company" | "position" | "duration" | "location" | "url" | "logo"
 >;
 
 const descriptions = {

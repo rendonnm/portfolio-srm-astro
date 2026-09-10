@@ -33,6 +33,7 @@ export const en = {
         duration: "Mar. 2026 - Present",
         location: "Medellín, Colombia",
         url: "https://scotiabank.com/",
+        logo: "/scotiabank-logo.webp",
       },
       {
         company: "IGGA S.A.S.",
@@ -40,6 +41,7 @@ export const en = {
         duration: "Jul. 2024 - Dec. 2025",
         location: "Medellín, Colombia",
         url: "https://igga.com.co/",
+        logo: "/igga-logo.webp",
       },
       {
         company: "IGGA S.A.S.",
@@ -47,6 +49,7 @@ export const en = {
         duration: "Nov. 2022 - Jul. 2024",
         location: "Medellín, Colombia",
         url: "https://igga.com.co/",
+        logo: "/igga-logo.webp",
       },
     ],
   },

@@ -3,6 +3,7 @@ export interface WorkExperience {
   position: string;
   duration: string;
   location: string;
+  logo: string;
   description: AstroComponentFactory;
   url?: string;
 }

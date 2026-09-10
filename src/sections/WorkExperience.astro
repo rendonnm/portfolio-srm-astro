@@ -45,6 +45,7 @@ const workExperience = getWorkExperience(locale, copy.jobs);
                       <span>{job.company}</span>
                     )}
                   </h3>
+
                   <div class="pl-2">
                     <p class="font-bold text-xl">{job.position}</p>
                     <p class="font-semibold text-lg text-dark-default-700 mb-5">
@@ -57,6 +58,13 @@ const workExperience = getWorkExperience(locale, copy.jobs);
                     </div>
                   </div>
                 </div>
+                <aside class="hidden md:flex absolute top-0 right-0 h-14 w-auto max-w-54 items-center justify-end overflow-hidden">
+                  <img
+                    src={job.logo}
+                    alt={`${job.company} logo`}
+                    class="h-full w-full object-contain"
+                  />
+                </aside>
               </div>
             </li>
           );
