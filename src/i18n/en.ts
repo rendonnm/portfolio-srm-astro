@@ -19,15 +19,15 @@ export const en = {
     title: "Work experience 💼",
     jobs: [
       {
-        company: "Domina Entrega Total S.A.S",
-        position: "Software Developer",
-        duration: "Jan. 2026 - Present",
+        company: "Scotiabank",
+        position: "Frontend Software Engineer Specialist",
+        duration: "Mar. 2026 - Present",
         location: "Medellín, Colombia",
-        url: "https://domina.com.co/",
+        url: "https://scotiabank.com/",
       },
       {
         company: "IGGA S.A.S.",
-        position: "Professional A (Software Developer)",
+        position: "Software Engineer",
         duration: "Jul. 2024 - Dec. 2025",
         location: "Medellín, Colombia",
         url: "https://igga.com.co/",

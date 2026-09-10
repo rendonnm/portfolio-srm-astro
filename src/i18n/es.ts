@@ -27,7 +27,7 @@ export const es = {
       },
       {
         company: "IGGA S.A.S.",
-        position: "Profesional A (Desarrollador de Software)",
+        position: "Ingeniero de Software",
         duration: "Jul. 2024 - Dic. 2025",
         location: "Medellín, Colombia",
         url: "https://igga.com.co/",
