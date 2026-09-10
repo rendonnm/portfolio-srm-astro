@@ -1,6 +1,7 @@
 export const en = {
   hero: {
     title: "Hello, I'm Santiago",
+    titleScreenReadOnly: "Rendón Múnera",
     subtitle: "Computer Engineer from Medellín, Colombia 🇨🇴",
     description:
       "Specialized in developing frontend solutions that connect with people and solve real problems.",

@@ -1,6 +1,7 @@
 export const es = {
   hero: {
     title: "Hola, soy Santiago",
+    titleScreenReadOnly: "Rendón Múnera",
     subtitle: "Ingeniero Informático de Medellín, Colombia 🇨🇴",
     description:
       "Especializado en el desarrollo de soluciones frontend que conectan con las personas y resuelven problemas reales.",
