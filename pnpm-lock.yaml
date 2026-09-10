@@ -64,6 +64,9 @@ devDependencies:
   '@biomejs/biome':
     specifier: 2.5.13
     version: 2.5.13
+  '@types/geojson':
+    specifier: ^7946.0.16
+    version: 7946.0.16
   tw-animate-css:
     specifier: ^1.4.0
     version: 1.4.0
@@ -1771,7 +1774,6 @@ packages:
 
   /@types/geojson@7946.0.16:
     resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
-    dev: false
 
   /@types/hast@3.0.5:
     resolution: {integrity: sha512-rp/ezSWaD1m44dPKICGhiskI13nVr7qTloFwDa/IYkhhf5nzwP+zIQcIJh3WIFSBOy/H1PzB40jPjMDksN4F+g==}

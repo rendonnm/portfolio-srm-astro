@@ -16,6 +16,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import { X, Minus, Plus, Locate, Maximize, Loader2 } from "lucide-react";
+import type * as GeoJSON from "geojson";
 
 import { cn } from "@/lib/utils";
 
@@ -989,7 +990,7 @@ type MapClusterLayerProps<
   pointColor?: string;
   /** Callback when an unclustered point is clicked */
   onPointClick?: (
-    feature: MapLibreGL.GeoJSONFeature,
+    feature: GeoJSON.Feature<GeoJSON.Point, P>,
     coordinates: [number, number],
   ) => void;
   /** Callback when a cluster is clicked. If not provided, zooms into the cluster */
@@ -1219,10 +1220,14 @@ function MapClusterLayer<
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
 
-      onPointClick(
-        feature as unknown as GeoJSON.Feature<GeoJSON.Point, P>,
-        coordinates,
-      );
+      const pointFeature: GeoJSON.Feature<GeoJSON.Point, P> = {
+        type: "Feature",
+        geometry: feature.geometry as GeoJSON.Point,
+        properties: feature.properties as P,
+        ...(feature.id !== undefined ? { id: feature.id } : {}),
+      };
+
+      onPointClick(pointFeature, coordinates);
     };
 
     // Cursor style handlers
