@@ -21,8 +21,8 @@ const monthNames = getMonthsOfGitHubActivity(calendar);
 const { copy } = Astro.props;
 ---
 
-<article>
-  <header class="flex justify-between mb-4 flex-wrap gap-2">
+<article class="flex flex-col h-full justify-between">
+  <header class="flex justify-between flex-wrap gap-2">
     <div class="flex gap-1">
       <h2 class="font-semibold">
         <a

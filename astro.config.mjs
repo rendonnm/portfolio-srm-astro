@@ -21,6 +21,9 @@ export default defineConfig({
       },
     },
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ["maplibre-gl"],
+    },
   },
   i18n: {
     locales: ["es", "en"],
