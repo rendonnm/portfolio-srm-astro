@@ -1,8 +1,17 @@
 export const en = {
+  seo: {
+    lang: "en",
+    title: "Santiago Rendón Múnera | Software Engineer",
+    description:
+      "Software Engineer from Medellín, Colombia, specialized in frontend development with React, Next.js, and TypeScript, with experience building APIs, working with backend systems, architecture, and testing.",
+    keywords:
+      "Santiago Rendón, Software Engineer, Frontend Engineer, React, Next.js, TypeScript, APIs, Software Architecture, Medellín",
+    jobTitle: "Software Engineer",
+  },
   hero: {
     title: "Hello, I'm Santiago",
     titleScreenReadOnly: "Rendón Múnera",
-    subtitle: "Computer Engineer from Medellín, Colombia 🇨🇴",
+    subtitle: "Software Engineer from Medellín, Colombia 🇨🇴",
     description:
       "Specialized in developing frontend solutions that connect with people and solve real problems.",
     projectChip: "Available for projects",

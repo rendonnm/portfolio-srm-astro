@@ -5,71 +5,56 @@ import Background from "@/components/Background.astro";
 import Analytics from "@vercel/analytics/astro";
 
 const { copy } = Astro.props;
+const isEnglish = Astro.url.pathname.startsWith("/en");
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? Astro.url.origin;
+const canonicalUrl = `${siteUrl}${isEnglish ? "/en/" : "/"}`;
+const socialImageUrl = new URL("/og-image.jpg", `${siteUrl}/`).toString();
+const seo = copy.seo;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={seo.lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Santiago Rendón Múnera – Ingeniero de software full-stack</title>
-    <meta
-      name="description"
-      content="Ingeniero de software full-stack con más de 3 años de experiencia ubicado en Envigado. Desarrollo con JavaScript, TypeScript, React y NodeJS (Express, NestJS)"
-    />
-    <meta
-      name="keywords"
-      content="Santiago Rendón, Ingeniero de Software, Desarrollador Full Stack, React, TypeScript, Portafolio, Envigado"
-    />
-    <link rel="canonical" href="https://santiagorendon.vercel.app/" />
-    <meta
-      property="og:title"
-      content="Santiago Rendón Múnera – Ingeniero de software full-stack"
-    />
-    <meta
-      property="og:description"
-      content="Ingeniero de software full-stack con más de 3 años de experiencia ubicado en Envigado. Desarrollo con JavaScript, TypeScript, React y NodeJS (Express, NestJS)"
-    />
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="keywords" content={seo.keywords} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={`${siteUrl}/`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://santiagorendon.vercel.app/" />
-    <meta
-      property="og:image"
-      content="https://santiagorendon.vercel.app/og-image.jpg"
-    />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Santiago Rendón Múnera – Ingeniero de software full-stack"
-    />
-    <meta
-      name="twitter:description"
-      content="Ingeniero de software full-stack con sede en Medellín. Desarrollo aplicaciones web modernas con JavaScript, TypeScript, React y Django REST Framework."
-    />
-    <meta
-      name="twitter:image"
-      content="https://santiagorendon.vercel.app/og-image.jpg"
-    />
-    <script type="application/ld+json">
-      {
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Santiago Rendón Múnera",
-        "url": "https://santiagorendon.vercel.app/",
-        "jobTitle": "Ingeniero de software full-stack",
-        "address": {
+        name: "Santiago Rendón Múnera",
+        url: canonicalUrl,
+        jobTitle: seo.jobTitle,
+        address: {
           "@type": "PostalAddress",
-          "addressLocality": "Medellín",
-          "addressCountry": "CO"
+          addressLocality: "Medellín",
+          addressCountry: "CO",
         },
-        "sameAs": [
+        sameAs: [
           "https://github.com/rendonnm",
-          "https://linkedin.com/in/rendonnm"
-        ]
-      }
-    </script>
+          "https://linkedin.com/in/rendonnm",
+        ],
+      })}
+    />
   </head>
 
   <body class="relative min-h-screen w-full">
