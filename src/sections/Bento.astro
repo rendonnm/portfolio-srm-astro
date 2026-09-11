@@ -9,13 +9,12 @@ import BentoTitle from "@/components/BentoTitle.astro";
 import PointIcon from "@/assets/point.svg";
 import WorkTogether from "@/components/WorkTogether.astro";
 import Projects from "@/components/Projects.astro";
+import { BentoWrapper } from "./BentoWrapper";
 
 const { copy } = Astro.props;
 ---
 
-<article
-  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-40 gap-4 auto-rows-auto sm:auto-rows-fr mb-30"
->
+<BentoWrapper client:load>
   <BentoCard class="sm:col-span-2 lg:col-span-24 lg:row-start-1 lg:row-end-4">
     <MonkeyTypeStats server:defer>
       <div slot="fallback" class="p-4 space-y-3 animate-puls h-full">
@@ -90,4 +89,4 @@ const { copy } = Astro.props;
       </div>
     </BentoMap>
   </BentoCard>
-</article>
+</BentoWrapper>

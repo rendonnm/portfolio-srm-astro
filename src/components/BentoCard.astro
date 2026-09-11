@@ -1,12 +1,27 @@
 ---
 import { twMerge } from "tailwind-merge";
+
 const { class: userClass } = Astro.props;
+
 const bentoClass = twMerge(
-  "flex flex-col rounded-3xl p-5 bg-[#0D1117] border-1 border-[#3d444d]",
-  userClass
+  `
+    relative flex flex-col overflow-hidden rounded-3xl
+    border border-[#3d444d] bg-[#0D1117] p-5
+    before:pointer-events-none
+    before:absolute
+    before:inset-0
+    before:z-0
+    before:opacity-[var(--spotlight-opacity,0)]
+    before:transition-opacity
+    before:duration-200
+    before:bg-[radial-gradient(circle_250px_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.05),transparent_72%)]
+    [&>*:not([data-bento-title])]:relative
+    [&>*:not([data-bento-title])]:z-10
+  `,
+  userClass,
 );
 ---
 
-<div class={bentoClass}>
+<div class={bentoClass} data-bento-card>
   <slot />
 </div>

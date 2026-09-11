@@ -7,21 +7,7 @@ const { copy } = Astro.props;
 ---
 
 <section class="relative w-full h-full" aria-labelledby="tech-stack-heading">
-  <div
-    class="flex absolute w-full h-full items-center justify-between z-10 pointer-events-none"
-    aria-hidden="true"
-  >
-    <div
-      class="bg-linear-to-r from-[#0D1117] to-transparent w-[10%] h-14 lg:h-16"
-    >
-    </div>
-    <div
-      class="bg-linear-to-l from-[#0D1117] to-transparent w-[10%] h-14 lg:h-16"
-    >
-    </div>
-  </div>
-
-  <div class="p-5 flex relative h-full w-full items-center">
+  <div class="relative z-10 flex h-full w-full items-center p-5">
     <header class="hidden sm:flex items-center gap-2 absolute top-0 pt-5">
       <RocketIcon class="size-5" aria-hidden="true" />
       <h2 id="tech-stack-heading" class="font-semibold text-zinc-50">
@@ -30,41 +16,45 @@ const { copy } = Astro.props;
     </header>
 
     <div
-      class="relative flex w-max items-center gap-8 carousel"
-      role="list"
-      aria-label={copy.ariaLabel}
+      class="min-w-0 flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
     >
-      <div class="flex shrink-0 items-center gap-8">
-        {
-          technologies.map((tech) => {
-            const Logo = tech.logo;
-            return (
-              <div
-                class="shrink-0 flex items-center justify-center"
-                role="listitem"
-              >
-                <Logo
-                  class="h-14 lg:h-16 w-auto"
-                  role="img"
-                  aria-label={tech.name}
-                />
-              </div>
-            );
-          })
-        }
-      </div>
+      <div
+        class="relative flex w-max items-center gap-8 carousel"
+        role="list"
+        aria-label={copy.ariaLabel}
+      >
+        <div class="flex shrink-0 items-center gap-8">
+          {
+            technologies.map((tech) => {
+              const Logo = tech.logo;
+              return (
+                <div
+                  class="shrink-0 flex items-center justify-center"
+                  role="listitem"
+                >
+                  <Logo
+                    class="h-14 lg:h-16 w-auto"
+                    role="img"
+                    aria-label={tech.name}
+                  />
+                </div>
+              );
+            })
+          }
+        </div>
 
-      <div class="flex shrink-0 items-center gap-8" aria-hidden="true">
-        {
-          technologies.map((tech) => {
-            const Logo = tech.logo;
-            return (
-              <div class="shrink-0 flex items-center justify-center">
-                <Logo class="h-14 lg:h-16 w-auto" />
-              </div>
-            );
-          })
-        }
+        <div class="flex shrink-0 items-center gap-8" aria-hidden="true">
+          {
+            technologies.map((tech) => {
+              const Logo = tech.logo;
+              return (
+                <div class="shrink-0 flex items-center justify-center">
+                  <Logo class="h-14 lg:h-16 w-auto" />
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     </div>
 
