@@ -17,9 +17,8 @@ const seo = copy.seo;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <meta name="keywords" content={seo.keywords} />
@@ -32,6 +31,7 @@ const seo = copy.seo;
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:site_name" content="Santiago Rendón" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
@@ -40,18 +40,34 @@ const seo = copy.seo;
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Person",
-        name: "Santiago Rendón Múnera",
-        url: canonicalUrl,
-        jobTitle: seo.jobTitle,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Medellín",
-          addressCountry: "CO",
-        },
-        sameAs: [
-          "https://github.com/rendonnm",
-          "https://linkedin.com/in/rendonnm",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": `${siteUrl}/#website`,
+            url: `${siteUrl}/`,
+            name: "Santiago Rendón",
+            alternateName: ["Santiago Rendón Múnera", "santiagorendon.dev"],
+            publisher: {
+              "@id": `${siteUrl}/#person`,
+            },
+            inLanguage: ["es", "en"],
+          },
+          {
+            "@type": "Person",
+            "@id": `${siteUrl}/#person`,
+            name: "Santiago Rendón Múnera",
+            url: `${siteUrl}/`,
+            jobTitle: seo.jobTitle,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Medellín",
+              addressCountry: "CO",
+            },
+            sameAs: [
+              "https://github.com/rendonnm",
+              "https://linkedin.com/in/rendonnm",
+            ],
+          },
         ],
       })}
     />
@@ -83,6 +99,8 @@ const seo = copy.seo;
 <style>
   :root {
     color-scheme: dark;
+    background-color: black;
+    scroll-behavior: smooth;
   }
   @font-face {
     font-family: "NunitoSans";
@@ -101,9 +119,5 @@ const seo = copy.seo;
     background-color: transparent;
     font-family: "NunitoSans", sans-serif;
     color: white;
-  }
-  :root {
-    background-color: black;
-    scroll-behavior: smooth;
   }
 </style>
