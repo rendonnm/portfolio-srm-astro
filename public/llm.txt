@@ -1,0 +1,22 @@
+# Santiago Rendón Múnera
+
+Software Engineer based in Medellín, Colombia.
+
+## Website
+
+Personal portfolio of Santiago Rendón Múnera.
+
+## Main pages
+
+- [Portfolio](https://santiagorendon.dev/)
+- [English version](https://santiagorendon.dev/en/)
+
+## Profiles
+
+- [GitHub](https://github.com/rendonnm)
+- [LinkedIn](https://linkedin.com/in/rendonnm)
+
+## Topics
+
+React, TypeScript, Next.js, frontend engineering, software engineering,
+microfrontends, testing and web development.
