@@ -6,6 +6,7 @@ import mdx from "@astrojs/mdx";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import vercel from "@astrojs/vercel";
+import sitemap from "@astrojs/sitemap";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,7 +28,7 @@ export default defineConfig({
     locales: ["es", "en"],
     defaultLocale: "es",
   },
-  integrations: [react(), mdx()],
+  integrations: [react(), mdx(), sitemap()],
   adapter: vercel(),
   output: "server",
 });
